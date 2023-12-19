@@ -1,40 +1,43 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" href="style.css">
-	<title>Free Learn</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+  <title>Ifandika</title>
 </head>
 <body>
-	<nav class="navbar">
-  <a herf="#" class="nav-logo">Free Learn</a>
-  <ul class="nav-menu">
-    <li class="nav-item">
-      <a herf="home.html" class="nav-link">Home</a>
-    </li>
-
- <div class="dropdown">
-  <button class="dropbtn">Projek</button>
-  <div class="dropdown-content">
-    <a href="#">Projek Rifki</a>
-    <a href="#">Link 2</a>
-    <a href="#">Link 3</a>
-  </div>
-</div>
-
-    <li class="nav-item">
-      <a href="#" class="nav-link">Artikel</a>
-    </li>
-    <li class="nav-item">
-      <a href="contact.html" class="nav-link">Tentang</a>
-    </li>
-  </ul>
-  <div class="hamburger">
-     <span class="bar"></span>
-     <span class="bar"></span>
-     <span class="bar"></span>
-  </div>
-</nav>
+  <header id="navbar">
+    <nav class="navbar-container container">
+      <a href="/" class="home-link">
+        <div class="navbar-logo"></div>
+        <h2>Ifandika</h2>
+      </a>
+      <button 
+        type="button"
+        id="navbar-toggle"
+        aria-controls="navbar-menu"
+        aria-label="Toggle menu"
+        aria-expanded="false" >
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <div id="navbar-menu" aria-labelledby="navbar-toggle">
+          <ul class="navbar-links">
+            <li class="navbar-item"><a class="navbar-link" href="tutorial/tutorial.html">Tutorial</a></li>
+            <li class="navbar-item"><a class="navbar-link" href="linux/linux.html">Linux</a></li>
+            <li class="navbar-item"><a class="navbar-link" href="tkj/tkj.html">TKJ</a></li>
+            <li class="navbar-item"><a class="navbar-link" href="projek/projek.html">Projek</a></li>
+            <li class="navbar-item"><a class="navbar-link" href="/careers">About</a></li>
+            <li class="navbar-item"><a class="navbar-link" href="/contact">Contact</a></li>
+          </ul>
+        </div>
+    </nav>
+  </header>
+  <footer>
+    
+  </footer>
+  <script type="text/javascript" src="js/index.js"></script>
 </body>
 </html>

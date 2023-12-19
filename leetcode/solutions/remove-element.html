@@ -4,7 +4,24 @@
 		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<title>Leetcode solutions - Remove Element</title>
-		<link rel="stylesheet" href="https://ifandika.github.io/css/style-leetcode.css"/>
+		<link rel="stylesheet" href="ifandika.github.io/css/style-leetcode.css"/>
+		<style>
+			* {
+				font-family: "Times New Roman", Times, serif;
+			}
+			pre code {
+			  background-color: #d9d9d9e5;
+			  border: 1px solid #999;
+			  display: block;
+			  padding: 1px;
+			  padding: 10px;
+			  text-size: 12px;
+			  color: #000000;
+			}
+			footer {
+				text-align: center;
+			}
+		</style>
 	</head>
 	<body>
 		<p>
@@ -13,28 +30,29 @@
 		</p>
 		<p>
 			Given an integer array nums and an integer val, remove all occurrences of val in nums in-place. The order of the elements may be changed. Then return the number of elements in nums which are not equal to val.
-Consider the number of elements in nums which are not equal to val be k, to get accepted, you need to do the following things:
-<li>Change the array nums such that the first k elements of nums contain the elements which are not equal to val.
-    The remaining elements of nums are not important as well as the size of nums.</li>
-<li>Return <b>k</b>.</li>
+			Consider the number of elements in nums which are not equal to val be k, to get accepted, you need to do the following things:
+		<li>Change the array nums such that the first k elements of nums contain the elements which are not equal to val.
+		    The remaining elements of nums are not important as well as the size of nums.
+		</li>
+		<li>Return <b>k</b>.</li>
 		</p>
 		<h4>Example 1</h4>
 		<p><b>Input:</b> nums = [3, 2, 2, 3], val = 3</p>
 		<p><b>Output:</b> val = 2, nums = [2, 2, ., .]</p>
-		| Java
+		<button>Java</button>
 		<pre>
 			<code>
-1. public class Main {
-2.   public int removeElement(int[] nums, int val) {
-3.     int index = 0;
-4.     for(int i = 0; i < nums.length; i++) {
-5.       if(nums[i] != val) {
-6.         nums[index++] = nums[i];
-7.       }
-8.     }
-9.     return index;
-10.   }
-11. }
+public class Main {
+	public int removeElement(int[] nums, int val) {
+		int index = 0;
+		for(int i = 0; i < nums.length; i++) {
+			if(nums[i] != val) {
+				nums[index++] = nums[i];
+			}
+		}
+		return index;
+	}
+}
 			</code>
 		</pre>
 		<footer>&copy; Copyright 2023 ifandika.github.io</footer>

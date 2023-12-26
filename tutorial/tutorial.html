@@ -1,11 +1,256 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Ifandika - Tutorial</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ifandika - Tutorial</title>
+  <style rel="stylesheet" type="text/css">
+:root {
+	--navbar-bg-color: hsl(0, 0%, 15%);
+	--navbar-text-color: hsl(0, 0%, 85%);
+	--navbar-text-color-focus: white;
+	--navbar-bg-contrast: hsl(0, 0%, 25%);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  height: 100vh;
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.6;
+}
+
+.container {
+  max-width: 1000px;
+  padding: 0 1.4rem;
+  margin: 0 auto;
+}
+
+#navbar {
+  --navbar-height: 64px;
+  position: fixed;
+  height: var(--navbar-height);
+  background-color: var(--navbar-bg-color);
+  left: 0;
+  right: 0;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+}
+
+.navbar-container {
+  display: flex;
+  justify-content: space-between;
+  height: 100%;
+  align-items: center;
+}
+
+.navbar-item {
+  margin: 0.4em;
+  width: 100%;
+}
+
+.home-link,
+.navbar-link {
+  color: var(--navbar-text-color);
+  text-decoration: none;
+  display: flex;
+  font-weight: 400;
+  align-items: center;
+}
+
+.home-link:is(:focus, :hover) {
+  color: var(--navbar-text-color-focus);
+}
+
+.navbar-link {
+  justify-content: center;
+  width: 100%;
+  padding: 0.4em 0.8em;
+  border-radius: 5px;
+}
+
+.navbar-link:is(:focus, :hover) {
+  color: var(--navbar-text-color-focus);
+  background-color: var(--navbar-bg-contrast);
+}
+
+/*For logo or icon*/
+/*.navbar-logo {
+  background-color: var(--navbar-text-color-focus);
+  border-radius: 50%;
+  width: 50px;
+  height: 30px;
+  margin-inline-start: 0.5em;
+}*/
+
+#navbar-toggle {
+  cursor: pointer;
+  border: none;
+  background-color: transparent;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.icon-bar {
+  display: block;
+  width: 25px;
+  height: 4px;
+  margin: 2px;
+  background-color: var(--navbar-text-color);
+}
+
+#navbar-toggle:is(:focus, :hover) .icon-bar {
+  background-color: var(--navbar-text-color-focus);
+}
+
+#navbar-toggle[aria-expanded='true'] .icon-bar:is(:first-child, :last-child) {
+  position: absolute;
+  margin: 0;
+  width: 30px;
+}
+
+#navbar-toggle[aria-expanded='true'] .icon-bar:first-child {
+  transform: rotate(45deg);
+}
+
+#navbar-toggle[aria-expanded='true'] .icon-bar:nth-child(2) {
+  opacity: 0;
+}
+
+#navbar-toggle[aria-expanded='true'] .icon-bar:last-child {
+  transform: rotate(-45deg);
+}
+
+#navbar-menu {
+  position: fixed;
+  top: var(--navbar-height);
+  bottom: 0;
+  opacity: 0;
+  visibility: hidden;
+  left: 0;
+  right: 0;
+}
+
+#navbar-toggle[aria-expanded='true'] + #navbar-menu {
+  background-color: rgba(0, 0, 0, 0.4);
+  opacity: 1;
+  visibility: visible;
+}
+
+.navbar-links {
+  list-style: none;
+  position: absolute;
+  left: 0;
+  right: 0;
+  background-color: var(--navbar-bg-color);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 0 20px 20px rgba(0, 0, 0, 0.3);
+}
+
+.tutorial-main {
+	margin-left: 20px;
+	margin-top: 50px;
+}
+
+.list-tutorial-java {
+	margin: 0px;
+}
+
+#item {
+	margin-left: 30px;
+}
+
+.next-prev {
+	position: relative;
+	justify-content: center;
+}
+
+#button {
+	position: absolute;
+  text-decoration: none;
+  display: inline-block;
+  padding: 8px 16px;
+}
+
+#button:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.previous {
+	top: 0px;
+	left: 0px;
+  background-color: #f1f1f1;
+  color: black;
+}
+
+.next {
+	top: 0px;
+	right: 0px;
+  background-color: #04AA6D;
+  color: white;
+}
+  </style>
 </head>
 <body>
-
+  <header id="navbar">
+    <nav class="navbar-container container">
+      <a href="/" class="home-link">
+        <div class="navbar-logo"></div>
+        <h2>Tutorial</h2>
+      </a>
+      <button 
+        type="button"
+        id="navbar-toggle"
+        aria-controls="navbar-menu"
+        aria-label="Toggle menu"
+        aria-expanded="false" >
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <div id="navbar-menu" aria-labelledby="navbar-toggle">
+          <ul class="navbar-links">
+            <li class="navbar-item"><a class="navbar-link" href="../index.html">Home</a></li>
+            <li class="navbar-item"><a class="navbar-link" href="linux/linux.html">Linux</a></li>
+            <li class="navbar-item"><a class="navbar-link" href="tkj/tkj.html">TKJ</a></li>
+            <li class="navbar-item"><a class="navbar-link" href="projek/projek.html">Projek</a></li>
+            <li class="navbar-item"><a class="navbar-link" href="/careers">About</a></li>
+            <li class="navbar-item"><a class="navbar-link" href="/contact">Contact</a></li>
+          </ul>
+        </div>
+    </nav>
+    <div class="next-prev">
+    	<a id="button" href="../index.html" class="previous">&laquo; Previous</a>
+    	<a id="button" href="java/java-dasar.html" class="next">Next &raquo;</a>
+    </div>
+    <div class="tutorial-main">
+    	<ul>
+    		<h2>Tutorial Java</h2>
+    		<li id="item"><a href="java/java-dasar.html">Java Dasar</a></li>
+    		<li id="item"><a href="java/java-exception.html">Java Exception Handling</a></li>
+    		<li id="item"><a href="java/java-oop.html">Java OOP</a></li>
+    		<li id="item"><a href="java/java-generic.html">Java Generic</a></li>
+    		<li id="item"><a href="java/java-cf.html">Java Collection Framework</a></li>
+    		<li id="item"><a href="java/java-io.html">Java I/O</a></li>
+    		<li id="item"><a href="java/java-networking.html">Java Networking</a></li>
+    		<li id="item"><a href="java/java-concurrency.html">Java Concurrency</a></li>
+    		<li id="item"><a href="java/java-lambda.html">Java Lambda Expression</a></li>
+    		<li id="item"><a href="java/java-annotations.html">Java Annotations</a></li>
+    	</ul>
+    </div>
+  </header>
+  <footer>
+  </footer>
+  <script type="text/javascript" src="../js/index.js"></script>
 </body>
 </html>

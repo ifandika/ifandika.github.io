@@ -17,6 +17,34 @@ body {
   line-height: 1.6;
 }
 
+.write {
+  margin: 50px;
+}
+
+.tutorial-java-collections {
+  border-left: 5px solid silver;
+  border-bottom-left-radius: 10px;
+  height: 200px;
+}
+
+.tutorial-java-collections p {
+  margin: 5px;
+}
+
+.roundbox {
+  border: 1px solid #b9b9b9;
+  position: relative;
+}
+
+.title {
+  color: #3b5998!important;
+  padding-bottom: 10px;
+  border-bottom-style: solid;
+  border-bottom-color: gray;
+  border-bottom-width: 2.5px;
+  width: auto;
+}
+
 .container {
   max-width: 1000px;
   padding: 0 1.4rem;

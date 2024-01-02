@@ -1,24 +1,15 @@
 <!DOCTYPE html>
 <html>
 <head>
-	</style>
-	<title>Ifandika - Tutorial</title>
-</head>
-<body>
-	<header id="navbar">
-    <nav class="navbar-container container">
-      <a href="index.html" class="home-link">
-        <div class="navbar-logo"></div>
-        <h2>| Tutorial</h2>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Ifandika - Tutorial</title>
   <style rel="stylesheet" type="text/css">
 :root {
-	--navbar-bg-color: hsl(0, 0%, 15%);
-	--navbar-text-color: hsl(0, 0%, 85%);
-	--navbar-text-color-focus: white;
-	--navbar-bg-contrast: hsl(0, 0%, 25%);
+  --navbar-bg-color: hsl(0, 0%, 15%);
+  --navbar-text-color: hsl(0, 0%, 85%);
+  --navbar-text-color-focus: white;
+  --navbar-bg-contrast: hsl(0, 0%, 25%);
 }
 
 * {
@@ -166,25 +157,25 @@ body {
 }
 
 .tutorial-main {
-	margin-left: 20px;
-	margin-top: 50px;
+  margin-left: 20px;
+  margin-top: 50px;
 }
 
 .list-tutorial-java {
-	margin: 0px;
+  margin: 0px;
 }
 
 #item {
-	margin-left: 30px;
+  margin-left: 30px;
 }
 
 .next-prev {
-	position: relative;
-	justify-content: center;
+  position: relative;
+  justify-content: center;
 }
 
 #button {
-	position: absolute;
+  position: absolute;
   text-decoration: none;
   display: inline-block;
   padding: 8px 16px;
@@ -196,15 +187,15 @@ body {
 }
 
 .previous {
-	top: 0px;
-	left: 0px;
+  top: 0px;
+  left: 0px;
   background-color: #f1f1f1;
   color: black;
 }
 
 .next {
-	top: 0px;
-	right: 0px;
+  top: 0px;
+  right: 0px;
   background-color: #04AA6D;
   color: white;
 }
@@ -229,7 +220,6 @@ body {
       </button>
       <div id="navbar-menu" aria-labelledby="navbar-toggle">
           <ul class="navbar-links">
-            <li class="navbar-item"><a class="navbar-link" href="///ifandika.github.io/index.html">Home</a></li>
             <li class="navbar-item"><a class="navbar-link" href="../index.html">Home</a></li>
             <li class="navbar-item"><a class="navbar-link" href="linux/linux.html">Linux</a></li>
             <li class="navbar-item"><a class="navbar-link" href="tkj/tkj.html">TKJ</a></li>
@@ -240,37 +230,27 @@ body {
         </div>
     </nav>
     <div class="next-prev">
-    	<a id="button" href="../index.html" class="previous">&laquo; Previous</a>
-    	<a id="button" href="java/java-dasar.html" class="next">Next &raquo;</a>
+      <a id="button" href="../index.html" class="previous">&laquo; Previous</a>
+      <a id="button" href="java/java-dasar.html" class="next">Next &raquo;</a>
     </div>
     <div class="tutorial-main">
-    	<ul>
-    		<h2>Tutorial Java</h2>
-    		<li id="item"><a href="java/java-dasar.html">Java Dasar</a></li>
-    		<li id="item"><a href="java/java-exception.html">Java Exception Handling</a></li>
-    		<li id="item"><a href="java/java-oop.html">Java OOP</a></li>
-    		<li id="item"><a href="java/java-generic.html">Java Generic</a></li>
-    		<li id="item"><a href="java/java-cf.html">Java Collection Framework</a></li>
-    		<li id="item"><a href="java/java-io.html">Java I/O</a></li>
-    		<li id="item"><a href="java/java-networking.html">Java Networking</a></li>
-    		<li id="item"><a href="java/java-concurrency.html">Java Concurrency</a></li>
-    		<li id="item"><a href="java/java-lambda.html">Java Lambda Expression</a></li>
-    		<li id="item"><a href="java/java-annotations.html">Java Annotations</a></li>
-    	</ul>
+      <ul>
+        <h2>Tutorial Java</h2>
+        <li id="item"><a href="java/java-dasar.html">Java Dasar</a></li>
+        <li id="item"><a href="java/java-exception.html">Java Exception Handling</a></li>
+        <li id="item"><a href="java/java-oop.html">Java OOP</a></li>
+        <li id="item"><a href="java/java-generic.html">Java Generic</a></li>
+        <li id="item"><a href="java/java-cf.html">Java Collection Framework</a></li>
+        <li id="item"><a href="java/java-io.html">Java I/O</a></li>
+        <li id="item"><a href="java/java-networking.html">Java Networking</a></li>
+        <li id="item"><a href="java/java-concurrency.html">Java Concurrency</a></li>
+        <li id="item"><a href="java/java-lambda.html">Java Lambda Expression</a></li>
+        <li id="item"><a href="java/java-annotations.html">Java Annotations</a></li>
+      </ul>
     </div>
   </header>
   <footer>
   </footer>
-   <script type="text/javascript">
-  	const navbarToggle = navbar.querySelector('#navbar-toggle');
-	let isNavbarExpanded = navbarToggle.getAttribute('aria-expanded') === 'true';
-
-	const toggleNavbarVisibility = () => {
-	  isNavbarExpanded = !isNavbarExpanded;
-	  navbarToggle.setAttribute('aria-expanded', isNavbarExpanded);
-	};
-
-	navbarToggle.addEventListener('click', toggleNavbarVisibility);
-  </script>
+  <script type="text/javascript" src="../js/index.js"></script>
 </body>
 </html>

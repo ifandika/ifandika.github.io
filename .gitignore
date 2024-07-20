@@ -1,3 +1,4 @@
 # Hidden files
-README.html
+doc/README.md
 *.md
+doc

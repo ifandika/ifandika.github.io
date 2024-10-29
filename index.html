@@ -3,14 +3,11 @@
     <head>
         <title>Ifandika Home</title>
         <meta charset="utf-8" />
-        <meta
-            name="viewport"
-            content="width=device-width, initial-scale=1, shrink-to-fit=no"
-        />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
 
         <link rel="stylesheet" href="css/style.css" />
 
-        <!-- Icon -->
+        <!-- Bootstrap Icon -->
         <link
             rel="stylesheet"
             href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
@@ -37,151 +34,23 @@
         ></script>
     </head>
     <body>
-        <!-- START: Sidebar -->
-        <nav>
-            <div class="logo">
-                <i class="bi bi-list h3 menu-icon"></i>
-                <span class="logo-name">Ifandika</span>
-            </div>
-            <div class="sidebar">
-                <div class="logo">
-                    <i class="bi bi-x-lg h3 menu-icon"></i>
-                </div>
 
-                <div class="sidebar-content">
-                    <ul class="lists">
-                        <li class="list">
-                            <a href="index.html" class="nav-link">
-                                <i class="bi bi-house icon"></i>
-                                <span class="link">Home</span>
-                            </a>
-                        </li>
-                        <li class="list">
-                            <a
-                                href="tutorial.html"
-                                class="nav-link"
-                                target="_blank"
-                            >
-                                <i class="bi bi-file-code icon"></i>
-                                <span class="link">Tutorial</span>
-                            </a>
-                        </li>
-
-                        <div class="bottom-cotent">
-                            <li class="list">
-                                <a
-                                    href="blog.html"
-                                    class="nav-link"
-                                    target="_blank"
-                                >
-                                    <i class="bi bi-chat-square-text icon"></i>
-                                    <span class="link">Blog</span>
-                                </a>
-                            </li>
-                            <li class="list">
-                                <a
-                                    href="projek.html"
-                                    class="nav-link"
-                                    target="_blank"
-                                >
-                                    <i class="bi bi-building-gear icon"></i>
-                                    <span class="link">Projek</span>
-                                </a>
-                            </li>
-                        </div>
-                    </ul>
-
-                    <hr />
-                </div>
-            </div>
-        </nav>
-        <section class="overlay"></section>
-        <!-- END: Sidebar -->
-
-        <!-- START: Main Content -->
-        <div class="main-content">
-            <header
-                class="d-flex justify-content-center justify-content-lg-between p-4"
-                style="background-color: #2e4b85"
-            >
-                <div class="container">
-                    <div class="text-center profile-image">
-                        <img
-                            src="resources/ic_profile_person_1.png"
-                            class="rounded-circle profile-icon"
-                            alt="Image Profile"
-                        />
-                    </div>
-                    <div class="text-center">
-                        <h2 style="color: white"><b>Maulana Ifandika</b></h2>
-                        <p style="color: white; text-size-adjust: 100%">
-                            Software Development | Graphic Design | Content
-                            Creator
-                        </p>
-                    </div>
-                </div>
-            </header>
+        <h2 class="title-name c-salmon">Maulana Ifandika</h2>
+        <div class="role">
+            <div class="d-inline">Student</div>
+            <div class="d-inline">| Developer</div>
+            <div class="d-inline">| IT Enthusiats</div>
         </div>
-        <!-- END: Main Content -->
 
-        <!-- START: Footer -->
+        <br>
 
-        <!-- Section: Social media -->
-        <section class="d-block justify-content-center p-4">
-            <div class="text-center">
-                <div>
-                    <p>Ikuti kami di:</p>
-                </div>
-                <div>
-                    <a href="" class="me-4 text-reset m-2">
-                        <i class="bi bi-facebook"></i>
-                    </a>
-                    <a
-                        href="https://github.com/ifandika"
-                        class="me-4 text-reset m-2"
-                    >
-                        <i class="bi bi-github"></i>
-                    </a>
-                    <a href="" class="me-4 text-reset m-2">
-                        <i class="bi bi-youtube"></i>
-                    </a>
-                    <a href="" class="me-4 text-reset m-2">
-                        <i class="bi bi-instagram"></i>
-                    </a>
-                    <a
-                        href="https://www.linkedin.com/feed/"
-                        class="me-4 text-reset m-2"
-                    >
-                        <i class="bi bi-linkedin"></i>
-                    </a>
-                    <a href="" class="me-4 text-reset m-2">
-                        <i class="bi bi-facebook"></i>
-                    </a>
-                </div>
-                <!-- Copyright -->
-                <div class="p-4">
-                    © 2024 Copyright
-                    <a class="text-reset fw-bold" href="https://ifandika.github.io/">ifandika</a>
-                </div>
-                <!-- Copyright -->
+        <div class="educations">
+            <div>
+                <h6 class="fw-bold"><a title="UMPwr" href="https://www.umpwr.ac.id/">Universitas Muhammadiyah Purworjeo</a></h6>
             </div>
-        </section>
-        <!-- Section: Social media -->
-
-        <!-- Javascript -->
-        <script type="text/javascript" charset="utf-8">
-            const navBar = document.querySelector("nav"),
-                menuBtns = document.querySelectorAll(".menu-icon"),
-                overlay = document.querySelector(".overlay");
-            menuBtns.forEach((menuBtn) => {
-                menuBtn.addEventListener("click", () => {
-                    navBar.classList.toggle("open");
-                });
-            });
-
-            overlay.addEventListener("click", () => {
-                navBar.classList.remove("open");
-            });
-        </script>
+            <div>
+                <h6 class="fw-bold"><a title="SMK Teknik TKM" href="https://www.smktkmteknikpwr.sch.id/">SMK Teknik Taman Karya Madya</a></h6>
+            </div>
+        </div>
     </body>
 </html>

@@ -83,3 +83,9 @@
 .fs-20px {
     font-size: 20px;
 }
+
+@media only screen and (min-width: 800px) {
+    .my-mark {
+        display: inline;
+    }
+}

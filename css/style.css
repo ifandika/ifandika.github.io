@@ -39,8 +39,9 @@
             var(--color-four),
             var(--color-four),
             var(--color-one)
-        ) 0 0 / var(--bg-size) 100%;
-    animation: move-bg 20s infinite linear;
+        )
+        0 0 / var(--bg-size) 100%;
+    animation: move-bg 20s infinite linear reverse;
 }
 .intro {
     border-radius: 5px;
@@ -93,4 +94,8 @@
     .my-mark {
         display: inline;
     }
+}
+
+.certificate {
+    color: rgb(62, 179, 247);
 }

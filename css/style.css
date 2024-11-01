@@ -22,17 +22,22 @@
     position: fixed;
     top: 0;
     width: 100%;
-    height: 15px;
+    height: 10px;
     --bg-size: 400%;
     --color-one: hsl(231, 90%, 55%);
     --color-two: hsl(91, 95%, 55%);
     --color-tree: hsl(4, 95%, 55%);
+    --color-four: #0d1829;
     background: linear-gradient(
             90deg,
             var(--color-one),
             var(--color-two),
+            var(--color-four),
+            var(--color-four),
             var(--color-tree),
             var(--color-two),
+            var(--color-four),
+            var(--color-four),
             var(--color-one)
         ) 0 0 / var(--bg-size) 100%;
     animation: move-bg 20s infinite linear;

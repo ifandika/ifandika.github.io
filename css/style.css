@@ -6,6 +6,7 @@
 * {
     box-sizing: border-box;
     font-family: "Poppins", serif;
+    --color-main-bg: #0d1829;
 }
 .main {
     background-color: #0d1829;
@@ -48,6 +49,9 @@
     border-left: solid 5px gray;
     padding: 10px 10px 2px 10px;
 }
+.list-journey li {
+    margin-bottom: 15px;
+}
 .list-journey li::marker {
     color: salmon;
 }
@@ -72,7 +76,7 @@
     color: white;
 }
 .c-background {
-    color: #0d1829;
+    color: var(--color-main-bg);
 }
 .c-salmon {
     color: salmon;

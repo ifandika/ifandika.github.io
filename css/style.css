@@ -46,7 +46,7 @@
 }
 .intro {
     border-radius: 5px;
-    border-left: solid 5px gray;
+    border-left: solid 5px rgb(13, 227, 235);
     padding: 10px 10px 2px 10px;
 }
 .list-journey li {
@@ -59,9 +59,11 @@
     END: Global
 */
 .badge {
+    width: auto;
+    height: auto;
     padding: 10px;
     border-radius: 5px;
-    background-color: gray;
+    background-color: rgb(17, 137, 216);
 }
 .title-name {
     font-weight: bold;

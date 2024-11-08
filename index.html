@@ -24,7 +24,7 @@
             crossorigin="anonymous"
         />
     </head>
-    <body class="c-background">
+    <body>
         <div class="gradient-bar"></div>
 
         <div class="main c-background">
@@ -121,18 +121,21 @@
                         <b><a title="Medium" href="https://medium.com/@ifandika"><i>@ifandika</i></a></b>
                     </div>
 
-                    <!-- <div class="c-white">
-                        <b>Google Scholar<div class="d-inline c-gray"> - </div><a title="Google Scholar" href="https://"><i>Maulana Ifandika</i></a></b>
-                    </div>
                     <div class="c-white">
-                        <b
-                            >Youtube
-                            <div class="d-inline c-gray">-</div>
-                            <a title="Youtube" href="#"><i></i></a
-                        ></b>
-                    </div> -->
-                    <!-- <p class="c-white"><b>Facebook - <a title="Facebook" href="https://www.facebook.com/maulana-ifandika">Maulana Ifandika</a></b></p>
-                    <p class="c-white"><b>Linkedin - <a title="Linkedin" href="https://linkedin.com/maulana-ifandika">Maulana Ifandika</a></b></p> -->
+                        <div class="label d-inline-block">
+                            <i class="bi bi-youtube"></i>
+                            <b>Youtube</b>
+                        </div>
+                        <b><a title="Youtube" href="https://www.youtube.com/@ifandika_yt"><i>@ifandika_yt</i></a></b>
+                    </div>
+
+                    <div class="c-white">
+                        <div class="label d-inline-block">
+                            <i class="bi bi-facebook"></i>
+                            <b>Facebook</b>
+                        </div>
+                        <b><a title="Facebook" href="https://www.facebook.com/maulana.ifandika"><i>Ifandika</i></a></b>
+                    </div>
                 </div>
 
                 <br />
@@ -175,7 +178,7 @@
             <br/>
             <br/>
 
-            <div class="joruney">
+            <div class="journey">
                 <div>
                     <h6 class="c-white">My Journey !</h6>
                 </div>
@@ -227,9 +230,25 @@
                     </div>
                 </div>
             </div>
+            
+            <br>
+            <div class="bars">
+                <div class="d-inline-block bulet bg-salmon"></div>
+                <div class="d-inline-block bulet bg-deepskyblue"></div>
+                <div class="d-inline-block bulet bg-greenyellow"></div>
+            </div>
+            <br>
+
+            <div class="footer">
+                <div class="c-white ta-center">
+                    <p>&#169; Copyright <span id="current-year"></span> - <i>Maulana Ifandika</i></p>
+                </div>
+            </div>
         </div>
 
         <script>
+            // For get current year
+            document.getElementById("current-year").innerHTML = new Date().getFullYear();
         </script>
     </body>
 </html>

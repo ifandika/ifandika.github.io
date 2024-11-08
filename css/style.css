@@ -8,11 +8,17 @@
     font-family: "Poppins", serif;
     --color-main-bg: #0d1829;
 }
+
+body {
+    background-color: #0d1829 !important;
+}
 .main {
     background-color: #0d1829;
     height: auto;
     width: 100%;
     padding: 50px 30px 50px 30px;
+    margin: auto;
+    max-width: 1000px;
 }
 @keyframes move-bg {
     to {
@@ -55,6 +61,21 @@
 .list-journey li::marker {
     color: salmon;
 }
+.bars {
+    width: 100%;
+    height: auto;
+    text-align: center;
+}
+.bars .bulet {
+    width: 40px;
+    height: 4px;
+    border-radius: 10px;
+    margin-right: 15px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+}
 /*
     END: Global
 */
@@ -86,6 +107,15 @@
 .c-slateblue {
     color: slateblue;
 }
+.bg-salmon {
+    background-color: salmon;
+}
+.bg-deepskyblue {
+    background-color: deepskyblue;
+}
+.bg-greenyellow {
+    background-color: greenyellow;
+}
 .d-inline {
     display: inline;
 }
@@ -98,7 +128,9 @@
 .fs-20px {
     font-size: 20px;
 }
-
+.ta-center {
+    text-align: center;
+}
 @media only screen and (min-width: 800px) {
     .my-mark {
         display: inline;
@@ -113,7 +145,6 @@
     padding: 3px 8px 3px 8px;
     margin: 5px 5px 5px 0;
 }
-
 .label:hover {
     background-color: #2b4e81;
 }

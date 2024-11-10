@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DSA - Merge Sort</title>
+    <link rel="stylesheet" href="../css/blog.css">
+    <link rel="stylesheet" href="../css/global.css">
+
+    <!-- HiglightJs -->
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css"> -->
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github-dark.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
+
+</head>
+<body>
+    <div class="main">
+        <div class="back">
+            <div class="button-style-1 d-inline-block"><a class="c-white td-none" href="../index.html"><b>Home</b></a></div>
+        </div>
+
+        <div class="top">
+            <h2 class="c-white">Algoritma MergeSort</h2>
+        </div>
+
+        <br>
+
+        <div class="middle">
+            <p class="c-white">Algoritma MergeSort berprinsip algoritma yang membagi lalu menggabungkan.</p>
+            <div class="button-style-1 d-inline-block"><b>Salin</b></div>
+            <pre class="my-code">
+                <code class="java">
+import java.util.*;
+
+public class MergeSort {
+    public static void main(String... args) {
+        int[] arr1 = {
+            1, 3, 5, 10, 9, 7, 8, 2, 20, 15, 18, 13, 19
+        };
+        algo(arr1);
+        System.out.println(Arrays.toString(arr1));
+    }
+
+    public static void algo(int[] nums) {
+        int length = nums.length;
+        if(length <= 1) {
+            return;
+        }
+        int middle = (length/2);
+        int[] left = new int[middle];
+        int[] right = new int[length - middle];
+        int rightIndex = 0;
+        for(int i = 0; i < length; i++) {
+            if(i < middle) {
+                left[i] = nums[i];
+            }
+            else {
+                right[rightIndex++] = nums[i];
+            }
+        }
+        algo(left);
+        algo(right);
+        merge(left, right, nums);
+    }
+
+    public static void merge(int[] arrLeft, int[] arrRight, int[] arrOri) {
+        int leftIndex = 0,
+            rightIndex = 0,
+            arrIndex = 0,
+            leftSize = arrLeft.length,
+            rightSize = arrRight.length;
+        
+        while(leftIndex < leftSize || rightIndex < rightSize) {
+            if(leftIndex < leftSize && rightIndex < rightSize) {
+                if(arrLeft[leftIndex] < arrRight[rightIndex]) { arrOri[arrIndex++] = arrLeft[leftIndex++]; }
+                else { arrOri[arrIndex++] = arrRight[rightIndex++]; }
+            }
+            else {
+                if(leftIndex < leftSize) { arrOri[arrIndex++] = arrLeft[leftIndex++]; }
+                else if(rightIndex < rightSize) { arrOri[arrIndex++] = arrRight[rightIndex++]; }
+            }   
+        }
+    }
+}
+            </code></pre>
+        </div>
+
+        <br>
+
+        <div class="bottom">
+            <div class="bars">
+                <div class="d-inline-block bulet bg-salmon"></div>
+                <div class="d-inline-block bulet bg-deepskyblue"></div>
+                <div class="d-inline-block bulet bg-greenyellow"></div>
+            </div>
+            
+            <br>
+            
+            <div class="footer">
+                <div class="c-white ta-center">
+                    <p>&#169; Copyright <span id="current-year"></span> - <i>Maulana Ifandika</i></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // For get current year
+        document.getElementById("current-year").innerHTML = new Date().getFullYear();
+    </script>
+</body>
+</html>

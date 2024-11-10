@@ -61,21 +61,6 @@ body {
 .list-journey li::marker {
     color: salmon;
 }
-.bars {
-    width: 100%;
-    height: auto;
-    text-align: center;
-}
-.bars .bulet {
-    width: 40px;
-    height: 4px;
-    border-radius: 10px;
-    margin-right: 15px;
-    -webkit-border-radius: 10px;
-    -moz-border-radius: 10px;
-    -ms-border-radius: 10px;
-    -o-border-radius: 10px;
-}
 .profile {
     width: 150px;
     height: 150px;
@@ -89,57 +74,11 @@ body {
 /*
     END: Global
 */
-.badge {
-    width: auto;
-    height: auto;
-    padding: 10px;
-    border-radius: 5px;
-    background-color: rgb(17, 137, 216);
-}
 .title-name {
     font-weight: bold;
 }
-.c-oranged {
-    color: orangered;
-}
-.c-gray {
-    color: gray;
-}
-.c-white {
-    color: white;
-}
 .c-background {
     color: var(--color-main-bg);
-}
-.c-salmon {
-    color: salmon;
-}
-.c-slateblue {
-    color: slateblue;
-}
-.bg-salmon {
-    background-color: salmon;
-}
-.bg-deepskyblue {
-    background-color: deepskyblue;
-}
-.bg-greenyellow {
-    background-color: greenyellow;
-}
-.d-inline {
-    display: inline;
-}
-.d-inline-block {
-    display: inline-block;
-}
-.fw-bold {
-    font-weight: bold;
-}
-.fs-20px {
-    font-size: 20px;
-}
-.ta-center {
-    text-align: center;
 }
 @media only screen and (min-width: 800px) {
     .my-mark {

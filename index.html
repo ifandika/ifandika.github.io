@@ -28,6 +28,18 @@
     <body>
         <div class="gradient-bar"></div>
 
+        <div class="menu-nav">
+            <div class="menu-bar c-white" onclick="menu_bar()">
+                Menu
+                <i class="bi bi-chevron-double-down"></i>
+            </div>
+            <ul id="menu-list">
+                <li><a href="">Home</a></li>
+                <li><a href="">Blog</a></li>
+                <li><a href="">Project</a></li>
+            </ul>
+        </div>
+
         <div class="main c-background">
             <br />
 
@@ -174,7 +186,31 @@
                         <b>TLX Toki<div class="d-inline c-gray"> - </div><a title="TLX Toki" href="https://tlx.toki.id/profiles/Ifandika"><i>Ifandika</i></a></b>
                     </div>
                     <div class="c-white">
-                        <b>Codewars<div class="d-inline c-gray"> - </div><a title="Codeward" href="https://www.codewars.com/users/ifandika"><i>ifandika</i></a></b>
+                        <b>Codewars<div class="d-inline c-gray"> - </div><a title="Codewars" href="https://www.codewars.com/users/ifandika"><i>ifandika</i></a></b>
+                    </div>
+                </div>
+            </div>
+
+            <br/>
+            <br/>
+
+            <div class="project">
+                <div>
+                    <h6 class="c-white">My Personal Project</h6>
+                </div>
+                <div>
+                    <div class="project-list">
+                        <ul>
+                            <li>
+                                <div class="c-white"><h6 class="d-inline c-white"><b>Kalkulator Biner</b></h6> - <a href=""><i>View</i></a></div>
+                                <div class="c-white">:Sebuah proyek Kalkulator untuk perhitungan nilai Biner.</div>
+                            </li>
+
+                            <li>
+                                <div class="c-white"><h6 class="d-inline c-white"><b>Java CRUD</b></h6> - <a href=""><i>View</i></a></div>
+                                <div class="c-white">:Sebuah proyek CRUD dengan bahasa pemrograman Java.</div>
+                            </li>
+                        </ul>
                     </div>
                 </div>
             </div>
@@ -251,6 +287,17 @@
         </div>
 
         <script>
+            // Menu bar
+            function menu_bar() {
+                var display_now = document.getElementById("menu-list").style.display;
+                if(display_now == "none") {
+                    document.getElementById("menu-list").style.display = "block";
+                }
+                else {
+                    document.getElementById("menu-list").style.display = "none";
+                }
+            }
+
             // For get current year
             document.getElementById("current-year").innerHTML = new Date().getFullYear();
         </script>

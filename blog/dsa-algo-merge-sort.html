@@ -21,14 +21,64 @@
         </div>
 
         <div class="top">
+            <div>
+                <p class="c-white">I also write on other platforms</p>
+                <b><a href="https://medium.com/@ifandika/merge-sort-algorithm-d224ed33ed34">Medium</a></b>
+            </div>
             <h2 class="c-white">Algoritma MergeSort</h2>
         </div>
 
-        <br>
-
         <div class="middle">
-            <p class="c-white">Algoritma MergeSort berprinsip algoritma yang membagi lalu menggabungkan.</p>
-            <div class="button-style-1 d-inline-block"><b>Salin</b></div>
+
+            <img class="img-cover" src="../resources/ic_cover_algo.jpeg">
+
+            <p class="c-white">
+                The Merge Sort algorithm is an algorithm that has the principle/way of dividing and merging. What is meant by dividing is breaking an array into small fractions that cannot be divided, then the array is sorted at the same time as the process of merging the array. In the combining stage the sorting process occurs, not in the dividing/splitting process.
+
+                <h4 class="c-white">Illustration</h4>
+
+                <p class="c-white">There is an array.</p>
+
+                <div class="bg-white-rounded">
+                    <img class="img-cover" src="../resources/merge-sort/img-1.png">
+                </div>
+
+                <p class="c-white">
+                    Then we break array into 2 parts (left & right). By creating a new array then entering the array values.
+                </p>
+
+                <div class="bg-white-rounded">
+                    <img class="img-cover" src="../resources/merge-sort/img-2.png">
+                </div>
+
+                <p class="c-white">
+                    Then break again until n(array length) <= 1.
+                </p>
+
+                <div class="bg-white-rounded">
+                    <img class="img-cover" src="../resources/merge-sort/img-3.png">
+                </div>
+
+                <p class="c-white">
+                    Then the next stage, the values are combined and sorted, smaller values on the left side & larger values on the right.
+                </p>
+
+                <div class="bg-white-rounded">
+                    <img class="img-cover" src="../resources/merge-sort/img-4.png">
+                </div>
+
+                <p class="c-white">
+                    For the complete process.
+                </p>
+
+                <div class="bg-white-rounded">
+                    <img class="img-cover" src="../resources/merge-sort/img-5.png">
+                </div>
+            </p>
+
+            <h4 class="c-white">Code Implementation</h4>
+
+            <div class="button-style-1 d-inline-block"><b>Copy</b></div>
             <pre class="my-code">
                 <code class="java">
 import java.util.*;
@@ -42,26 +92,21 @@ public class MergeSort {
         System.out.println(Arrays.toString(arr1));
     }
 
-    public static void algo(int[] nums) {
-        int length = nums.length;
+    public static void algo(int[] array) {
+        int length = array.length;
         if(length <= 1) {
             return;
         }
         int middle = (length/2);
         int[] left = new int[middle];
         int[] right = new int[length - middle];
-        int rightIndex = 0;
-        for(int i = 0; i < length; i++) {
-            if(i < middle) {
-                left[i] = nums[i];
-            }
-            else {
-                right[rightIndex++] = nums[i];
-            }
-        }
+        
+        left = Arrays.copyOfRange(array, 0, middle);
+        right = Arrays.copyOfRange(array, middle, length);
+
         algo(left);
         algo(right);
-        merge(left, right, nums);
+        merge(left, right, array);
     }
 
     public static void merge(int[] arrLeft, int[] arrRight, int[] arrOri) {

@@ -17,3 +17,14 @@ body {
     margin: auto;
     max-width: 1300px;
 }
+.bg-white-rounded {
+    width: 100%;
+    height: auto;
+    background-color: white;
+    border-radius: 8px;
+}
+.img-cover {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}

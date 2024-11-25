@@ -47,9 +47,8 @@ pre {
     width: auto;
 }
 pre code.hljs {
-    font-size: 13px;
+    font-size: 14px;
     padding: 0 10px 0 10px !important;
-    font-family: 'Courier New', Courier, monospace;
     border-left: solid greenyellow 3px;
 }
 .bars {

@@ -101,6 +101,35 @@ body {
     -ms-border-radius: 100%;
     -o-border-radius: 100%;
 }
+
+.motto {
+    width: 100%;
+    height: auto;
+}
+.motto-container {
+    width: 100%;
+    height: auto;
+    align-items: center;
+    text-align: center;
+}
+.motto-container div p {
+    color: rgb(62, 179, 247);
+    overflow: hidden;
+    font-size: 24px;
+    margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+    animation: typing 4s steps(40, end), blink-caret .75s step-end;
+}
+/* The typing effect */
+@keyframes typing {
+    from { width: 0 }
+    to { width: 100% }
+}
+/* The typewriter cursor effect */
+@keyframes blink-caret {
+    from, to { border-color: transparent }
+    50% { border-color: orange; }
+}
+
 /*
     END: Global
 */

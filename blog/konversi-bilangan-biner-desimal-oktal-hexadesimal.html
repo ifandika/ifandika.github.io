@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Konversi Bilangan Biner, Desimal, Oktal, Hexadesimal | Ifandika</title>
+    <link rel="stylesheet" href="../css/blog.css">
+    <link rel="stylesheet" href="../css/global.css">
+
+    <!-- HiglightJs -->
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css"> -->
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github-dark.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
+
+</head>
+<body>
+    <div class="main">
+        <div class="nav">
+            <div class="nav-main">
+                <div class="button-style-1 d-inline-block"><a class="c-white td-none" href="../index.html"><b>Home</b></a></div>
+            </div>
+        </div>
+
+        <div class="top">
+            <div class="top-main">
+                <p class="title">Konversi Bilangan Biner, Desimal, Oktal, Hexadesimal</p>
+            </div>
+        </div>
+
+        <div class="middle">
+            <div class="middle-main article">
+                <img class="img-cover" src="https://media.istockphoto.com/id/1448152453/vector/big-data-technology-and-data-science-illustration-data-flow-concept-querying-analysing.jpg?s=612x612&w=0&k=20&c=To0lhCrVmDYdSkOUOGxGsjlYe0buj_wwGCDqYhF9p2o=" alt="">
+                <h3>Biner</h3>
+                <p>
+                    10101 (Biner -> Desimal)<br>
+                    Diberikan bilangan biner 10101, maka untuk konversinya dari bilangan Biner -> Desimal, 
+                    untuk langkah konversinya setiap bilangan dikali 2 dengan 2 berpangkat nilai bertambah 
+                    dan dimulai dari 0 dari kanan, kemudian kita jumlahkan.<br>
+                    = 1×24 0×23 1×22 0×21 1×20<br>
+                    =   16  +  0   +  4   +   0  +   1<br>
+                    =  21<br>
+                    Jadi nilai desimalnya adalah 21<br>
+                </p>
+
+                <h3>Desimal</h3>
+                <p>
+                    28 (Desimal -> Biner)<br>
+                    Diberikan bilangan desimal 28, maka untuk konversinya dari bilangan Desimal -> Biner, 
+                    untuk langkah konversinya setiap bilangan dibagi 2 higga 0 dan hasil bagi berupa 0 atau 1 
+                    yang diambil, hasil nilai pada pembagian pertama akan diletakan di paling kanan dan 
+                    pembagian akhir paling kiri. Terdapat operasi matematika untuk mencari hasil dari 
+                    pembagian yaitu modulo, dinotasikan mod atau %.<br>
+                    28 ÷ 2 = 14, sisa 0<br>
+                    14 ÷ 2 = 7, sisa 0<br>
+                    7 ÷ 2 = 3, sisa 1<br>
+                    3 ÷ 2 = 1, sisa 1<br>
+                    1 ÷ 2 = 0, sisa 1<br>
+                    = 11100<br>
+                    Jadi nilai biner dari desimal 28 adalah 11100<br>
+                </p>
+
+                <h3>Oktal</h3>
+                <p>
+                    :)
+                </p>
+
+                <h3>Hexadesimal</h3>
+                <p>
+                    :)
+                </p>
+            </div>
+        <br>
+
+        <div class="line-bar">
+            <div></div>
+        </div>
+
+        <div class="bottom">
+            <div class="footer">
+                <div class="c-white ta-center">
+                    <p>&#169; By Maulana Ifandika</i></p>
+                    <!-- <p><h6>&#169; Copyright <span id="current-year"></span> - <i>Maulana Ifandika</i></h6></p> -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // For get current year
+        document.getElementById("current-year").innerHTML = new Date().getFullYear();
+    </script>
+</body>
+</html>

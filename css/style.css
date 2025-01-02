@@ -163,3 +163,23 @@ body {
 .project-list ul li {
     margin-bottom: 10px;
 }
+
+.line-down {
+    width: 100%;
+    height: auto;
+    align-items: center;
+    text-align: center;
+}
+.line-down .line-down-main {   
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 3px;
+    height: 500px;
+    border-radius: 5px;
+    background-color: white;
+}
+.grid {
+    display: grid;
+    grid-template-columns: 45% 5% 45%;
+}

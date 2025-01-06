@@ -7,12 +7,9 @@
     <link rel="stylesheet" href="../css/orange.css">
     <link rel="stylesheet" href="../css/global.css">
 
-    <!-- HiglightJs -->
-    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css"> -->
      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github-dark.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
     <script>hljs.highlightAll();</script>
-
 </head>
 <body>
     <div class="main">
@@ -31,8 +28,52 @@
         <div class="middle">
             <div class="middle-main article">
                 <img class="img-cover" src="https://netbeez.net/wp-content/uploads/2020/02/unnamed.png" alt="">
-                <p>Subnetting adalah teknik dalam pembagian klasifikasi IP Adddress v4.</p>
+                <p>
+                    Subnetting adalah teknik dalam pembagian klasifikasi IP Adddress v4.
+                </p>
+
+                <h2>Istilah dalam subnetting</h2>
+                Beberapa istilah dalam subnetting
+                <p>
+                    <h4>CIDR</h4>
+                    Adalah nilai / setelah IP, mempresentasikan jumlah nilai biner 1.
+                    <img class="img-cover-med" src="https://www.sistemit.com/wp-content/uploads/2020/04/notasi-cidr.png" alt="">
+
+                    <h4>Jumlah subnet</h4>
+                    Mengacu pada range untuk per subnet.
+                    <img src="../resources/img_1.jpeg" alt="" class="img-cover-med">
+
+                    <h4>Jumlah host per subnet</h4>
+                    Mengacu pada banyaknya host yang dapat dibuat per 1 subnet.
+
+                    <h4>Wildcard</h4>
+                    Adalah nilai desimal dari nilai biner 0 dari CIDR.
+                    <img src="../resources/img_2.png" alt="" class="img-cover-med">
+
+                    <h4>Block subnet</h4>
+                    Mengacu pada range untuk setiap per subnet.
+
+                    <h4>Host pertama dan terakhir</h4>
+                    Adalah batas nilai IP yang digunakan oleh host/pengguna.
+
+                    <h4>Broadcast</h4>
+                    Nilai IP spesial yang digunakan untuk mengirim ke seluruh host (IP digunakan oleh sistem).
+                    <img src="../resources/img_3.jpg" alt="" class="img-cover-med">
+                </p>
                 
+                <h2>Subnetting</h2>
+                <p>
+                    Contoh untuk nilai IP yang akan disubnetting, IP 192.150.10.0/26<br>
+                    Analisis:<br>
+                    <ul>
+                        <li>IP Kelas = C (192)</li>
+                        <li>CIDR = /26</li>
+                        <li>Segmen = 192.168 (Network-ID) & 10.0 (Host-ID)</li>
+                    </ul>
+                    Nilai Wildcard<br>
+                    /26      = 11111111.11111111.11111111.11000000<br>
+                    Wildcard =     0   .    0   .    0   .   63<br>
+                </p>
             </div>
         <br>
 

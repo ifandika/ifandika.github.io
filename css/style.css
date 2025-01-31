@@ -39,16 +39,13 @@ body {
     padding: 8px 16px;
     text-decoration: none;
 }
-.menu-nav ul li a:hover {
-    color: skyblue;
-}
 .main {
     background-color: #0d1829;
     height: auto;
     width: 100%;
-    padding: 10px 30px 10px 30px;
+    /* padding: 10px 30px 10px 30px; */
     margin: auto;
-    max-width: 1300px;
+    max-width: 1100px;
 }
 @keyframes move-bg {
     to {
@@ -139,9 +136,15 @@ body {
 .c-background {
     color: var(--color-main-bg);
 }
-@media only screen and (min-width: 800px) {
+@media only screen and (min-width: 1000px) {
     .my-mark {
         display: inline;
+    }
+    h2 {
+        color: black;
+    }
+    .main .main-profile .grid {
+        grid-template-columns: 0 0;
     }
 }
 .certificate {
@@ -179,7 +182,37 @@ body {
     border-radius: 5px;
     background-color: white;
 }
-.grid {
+
+.main .main-profile {
+    width: 100%;
+    height: auto;
+}
+.main .main-profile .grid {
+    width: 100%;
+    height: auto;
     display: grid;
-    grid-template-columns: 45% 5% 45%;
+    grid-template-columns: 60% 40%;
+}
+.main .main-profile .grid .grid-left {
+    background-color: #284775;
+    border-bottom-left-radius: 10px;
+    border-top-left-radius: 10px;
+    width: 100%;
+    height: auto;
+    border-bottom: solid 4px salmon;
+    padding: 25px;
+}
+
+.main .main-profile .grid .grid-right {
+    background-color: #d1d1d1;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    width: 100%;
+    height: auto;
+    border-right: solid 4px salmon;
+    border-bottom: solid 4px salmon;
+}
+.main .main-profile .grid .grid-right img {
+    width: 100%;
+    height: auto;
 }

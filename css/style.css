@@ -136,17 +136,6 @@ body {
 .c-background {
     color: var(--color-main-bg);
 }
-@media only screen and (min-width: 1000px) {
-    .my-mark {
-        display: inline;
-    }
-    h2 {
-        color: black;
-    }
-    .main .main-profile .grid {
-        grid-template-columns: 0 0;
-    }
-}
 .certificate {
     color: rgb(62, 179, 247);
 }
@@ -186,6 +175,8 @@ body {
 .main .main-profile {
     width: 100%;
     height: auto;
+    padding-left: 10px;
+    padding-right: 10px;
 }
 .main .main-profile .grid {
     width: 100%;
@@ -204,7 +195,7 @@ body {
 }
 
 .main .main-profile .grid .grid-right {
-    background-color: #d1d1d1;
+    background-color: #a0a0a0;
     border-top-right-radius: 10px;
     border-bottom-right-radius: 10px;
     width: 100%;
@@ -215,4 +206,28 @@ body {
 .main .main-profile .grid .grid-right img {
     width: 100%;
     height: auto;
+}
+
+.main .account {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+@media only screen and (max-width: 900px) {
+    .my-mark {
+        display: inline;
+    }
+    .main .main-profile .grid {
+        grid-template-columns: 1fr;
+    }
+    .main .main-profile .grid .grid-left {
+        border-radius: 0;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+    }
+    .main .main-profile .grid .grid-right {
+        border-radius: 0;
+        border-bottom-left-radius: 10px;
+        border-bottom-right-radius: 10px;
+    }
 }

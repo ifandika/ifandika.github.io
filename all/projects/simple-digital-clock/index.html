@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Simple Clock</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+    }
+
+    body div {
+      width: 100%;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .main-clock {
+      width: 60%;
+      height: auto;
+      border-radius: 15px;
+      display: block;
+      background-color: aqua;
+      border-bottom: solid 5px salmon;
+    }
+    .main-clock .clock-grid {
+      border: 7px;
+      padding: 5px;
+      width: 100%;
+      height: 200px;
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+    }
+    .main-clock .clock-grid .sparate,
+    .main-clock .clock-grid .hour,
+    .main-clock .clock-grid .minute,
+    .main-clock .clock-grid .second,
+    .main-clock .clock-grid .number {
+      width: 100%;
+      height: 200px;
+      color: rgb(31, 31, 31);
+    }
+    .digit, .sparate {
+      font-size: 50px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <div>
+
+      <div class="main-clock">
+        <div class="clock-grid">
+          <div class="hour digit">100</div>
+          <div class="sparate">:</div>
+          <div class="minute digit">100</div>
+          <div class="sparate">:</div>
+          <div class="second digit">100</div>
+          <div class="sparate">:</div>
+          <div class="number digit">100</div>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <script>
+    function updateClock() {
+      var hour = document.querySelector('.hour');
+      var minute = document.querySelector('.minute');
+      var second = document.querySelector('.second');
+      var number = document.querySelector('.number')
+      
+      const date = new Date();
+      let get_hours = date.getHours();
+      let get_minutes = date.getMinutes();
+      let get_seconds = date.getSeconds();
+      
+      get_hours = get_hours < 10 ? '0' + get_hours : get_hours;
+      get_minutes = get_minutes < 10 ? '0' + get_minutes : get_minutes;
+      get_seconds = get_seconds < 10 ? '0' + get_seconds : get_seconds;
+
+      level(hour, get_hours);
+      level(minute, get_minutes);
+      level(second, get_seconds);
+
+      hour.innerHTML = get_hours;
+      minute.innerHTML = get_minutes;
+      second.innerHTML = get_seconds;
+    }
+
+    function level(tag, digit) {
+      if(digit <= 20) {
+        tag.style.color = 'green';
+      }
+      else if(digit >= 20 && digit <= 40) {
+        tag.style.color = 'orange';
+      }
+      else if(digit >= 40 && digit <= 60) {
+        tag.style.color = 'red';
+      }
+    }
+    
+    updateClock();
+
+    setInterval(updateClock, 100);
+  </script>
+</body>
+</html>

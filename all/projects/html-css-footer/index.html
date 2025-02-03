@@ -1,196 +1,214 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>HTML CSS Footer | Web Project</title>
 
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
 
     <style type="text/css">
-        @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css");
-        @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+      @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css");
+      @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 
-        * {
-            font-family: "Poppins", serif;
-            margin: 0;
-            padding: 0;
-        }
-        main {
-            width: 100%;
-            height: auto;
-            background-color: white;
-        }
-        main .main-grid {
-            width: auto;
-            height: 420px;
-            display: grid;
-            grid-template-columns: 20% 65% 15%;
-        }
-        main .main-grid .grid-cell {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            color: rgb(49, 49, 49);
-        }
-        main .main-grid .grid-cell .label {
-            background-color: yellow;
-        }
-        main .main-grid .grid-cell .big {
-            font-size: 60px;
-            border-bottom: solid 4px yellow;
-        }
-        main .main-grid .grid-cell .circle {
-            width: 100px;
-            height: 100px;
-            border-radius: 360%;
-            background-color: yellow;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-        main .main-grid .grid-cell .circle:hover {
-            background-color: salmon;
-        }
+      * {
+        font-family: "Poppins", serif;
+        margin: 0;
+        padding: 0;
+      }
+      main {
+        width: 100%;
+        height: auto;
+        background-color: white;
+      }
+      main .main-grid {
+        width: auto;
+        height: 420px;
+        display: grid;
+        grid-template-columns: 20% 65% 15%;
+      }
+      main .main-grid .grid-cell {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: rgb(49, 49, 49);
+      }
+      main .main-grid .grid-cell .label {
+        background-color: yellow;
+      }
+      main .main-grid .grid-cell .big {
+        font-size: 60px;
+        border-bottom: solid 4px yellow;
+      }
+      main .main-grid .grid-cell .circle {
+        width: 100px;
+        height: 100px;
+        border-radius: 360%;
+        background-color: yellow;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      main .main-grid .grid-cell .circle:hover {
+        background-color: salmon;
+      }
 
-        footer {
-            width: 100%;
-            height: auto;
-        }
-        footer .footer-main {
-            width: auto;
-            height: auto;
-            background-color: rgb(20, 20, 20);
-            display: grid;
-            grid-gap: 5px;
-            grid-template-columns: 25% 25% 25% 25%;
-            grid-template-rows: auto;
-            padding: 40px 20px 40px 20px;
-        }
-        footer .footer-main .grid-cell {
-            display: flex;
-            flex-direction: column;
-            align-items: flex-start;
-            color: white;
-            font-size: 17px;
-        }
-        footer .footer-main .grid-cell .big {
-            font-size: 40px;
-        }
-        footer .footer-main .grid-cell .big .label {
-            background-color: yellow;
-            color: black;
-        }
-        footer .footer-main .grid-cell .medsos {
-            margin-top: 30px;
-            width: 100%;
-            display: flex;
-            justify-content: space-between;
-        }
-        footer .footer-main .grid-cell .medsos div i {
-            font-size: 22px;
-        }
-        footer .footer-main .grid-cell .medsos div i:hover {
-            color: yellow;
-        }
-        a {
-            color: white;
-        }
-        a:hover {
-            background-color: yellow;
-            color: black;
-        }
+      footer {
+        width: 100%;
+        height: auto;
+      }
+      footer .footer-main {
+        width: auto;
+        height: auto;
+        background-color: rgb(20, 20, 20);
+        display: grid;
+        grid-gap: 5px;
+        grid-template-columns: 25% 25% 25% 25%;
+        grid-template-rows: auto;
+        padding: 40px 20px 40px 20px;
+      }
+      footer .footer-main .grid-cell {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        color: white;
+        font-size: 17px;
+      }
+      footer .footer-main .grid-cell .big {
+        font-size: 40px;
+      }
+      footer .footer-main .grid-cell .big .label {
+        background-color: yellow;
+        color: black;
+      }
+      footer .footer-main .grid-cell .medsos {
+        margin-top: 30px;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+      }
+      footer .footer-main .grid-cell .medsos div i {
+        font-size: 22px;
+      }
+      footer .footer-main .grid-cell .medsos div i:hover {
+        color: yellow;
+      }
+      a {
+        color: white;
+      }
+      a:hover {
+        background-color: yellow;
+        color: black;
+      }
     </style>
-</head>
-<body>
+  </head>
+  <body>
     <main>
-        <div class="main-grid">
-            <div class="grid-cell">
-                <p>
-                    <span class="label">HEARD</span><br>
-                    ENOUGH! ->
-                </p>
-            </div>
-
-            <div class="grid-cell">
-                <p class="big">
-                    Contact us
-                </p>
-            </div>
-
-            <div class="grid-cell">
-                <div class="circle">
-                    <span>=></span>
-                </div>
-            </div>
+      <div class="main-grid">
+        <div class="grid-cell">
+          <p>
+            <span class="label">HEARD</span><br />
+            ENOUGH! ->
+          </p>
         </div>
+
+        <div class="grid-cell">
+          <p class="big">Contact us</p>
+        </div>
+
+        <div class="grid-cell">
+          <div class="circle">
+            <span>=></span>
+          </div>
+        </div>
+      </div>
     </main>
 
     <footer>
-        <div class="footer-main">
-            <div class="grid-cell">
-                <p class="big">
-                    The <span class="label">agency</span><br>
-                    for impatient brands
-                </p>
-            </div>
-
-            <div class="grid-cell">
-                <p><img
-                    src="https://flagcdn.com/16x12/id.png"
-                    srcset="https://flagcdn.com/32x24/ua.png 2x,
-                      https://flagcdn.com/48x36/ua.png 3x"
-                    width="16"
-                    height="12"
-                    alt="Indonesia">
-                    indonesia</p>
-                <br>
-                <p>indonesia@indomail.net.id</p>
-                <p>+62 8119 8272 2304</p>
-                <p>Gedung Sekretariat Jenderal dan Badan Keahlian DPR RI Lantai 7. Komplek MPR, DPR, DPD. Jl. Jend. Gatot Subroto, Senayan,. Jakarta Pusat 10270.</p>
-                <br>
-                <p><a href="">SEE ON MAP</a></p>
-            </div>
-
-            <div class="grid-cell">
-                <p><img
-                    src="https://flagcdn.com/16x12/jp.png"
-                    srcset="https://flagcdn.com/32x24/ua.png 2x,
-                      https://flagcdn.com/48x36/ua.png 3x"
-                    width="16"
-                    height="12"
-                    alt="Japan">
-                    Japan</p>
-                <br>
-                <p>indonesia@indomail.net.id</p>
-                <p>+62 8119 8272 2304</p>
-                <p>Gedung Sekretariat Jenderal dan Badan Keahlian DPR RI Lantai 7. Komplek MPR, DPR, DPD. Jakarta Pusat 10270.</p>
-                <br>
-                <p><a href="">SEE ON MAP</a></p>
-            </div>
-
-            <div class="grid-cell">
-                <P>WANT TO BE SMARTEST IN YOUR OFFICE</P>
-                <br>
-                <p><a href="">SIGN UP FOR NEWSLETTER</a></p>
-                <br>
-                <p>FOLLOW US</p>
-                <div class="medsos">
-                    <div>
-                        <i class="bi bi-instagram"><a href=""></a></i>
-                    </div>
-                    <div>
-                        <i class="bi bi-youtube"><a href=""></a></i>
-                    </div>
-                    <div>
-                        <i class="bi bi-linkedin"><a href=""></a></i>
-                    </div>
-                    <div>
-                        <i class="bi bi-twitter-x"><a href=""></a></i>
-                    </div>
-                </div>
-            </div>
+      <div class="footer-main">
+        <div class="grid-cell">
+          <p class="big">
+            The <span class="label">agency</span><br />
+            for impatient brands
+          </p>
         </div>
+
+        <div class="grid-cell">
+          <p>
+            <img
+              src="https://flagcdn.com/16x12/id.png"
+              srcset="
+                https://flagcdn.com/32x24/ua.png 2x,
+                https://flagcdn.com/48x36/ua.png 3x
+              "
+              width="16"
+              height="12"
+              alt="Indonesia"
+            />
+            indonesia
+          </p>
+          <br />
+          <p>indonesia@indomail.net.id</p>
+          <p>+62 8119 8272 2304</p>
+          <p>
+            Gedung Sekretariat Jenderal dan Badan Keahlian DPR RI Lantai 7.
+            Komplek MPR, DPR, DPD. Jl. Jend. Gatot Subroto, Senayan,. Jakarta
+            Pusat 10270.
+          </p>
+          <br />
+          <p><a href="">SEE ON MAP</a></p>
+        </div>
+
+        <div class="grid-cell">
+          <p>
+            <img
+              src="https://flagcdn.com/16x12/jp.png"
+              srcset="
+                https://flagcdn.com/32x24/ua.png 2x,
+                https://flagcdn.com/48x36/ua.png 3x
+              "
+              width="16"
+              height="12"
+              alt="Japan"
+            />
+            Japan
+          </p>
+          <br />
+          <p>indonesia@indomail.net.id</p>
+          <p>+62 8119 8272 2304</p>
+          <p>
+            Gedung Sekretariat Jenderal dan Badan Keahlian DPR RI Lantai 7.
+            Komplek MPR, DPR, DPD. Jakarta Pusat 10270.
+          </p>
+          <br />
+          <p><a href="">SEE ON MAP</a></p>
+        </div>
+
+        <div class="grid-cell">
+          <p>WANT TO BE SMARTEST IN YOUR OFFICE</p>
+          <br />
+          <p><a href="">SIGN UP FOR NEWSLETTER</a></p>
+          <br />
+          <p>FOLLOW US</p>
+          <div class="medsos">
+            <div>
+              <i class="bi bi-instagram"><a href=""></a></i>
+            </div>
+            <div>
+              <i class="bi bi-youtube"><a href=""></a></i>
+            </div>
+            <div>
+              <i class="bi bi-linkedin"><a href=""></a></i>
+            </div>
+            <div>
+              <i class="bi bi-twitter-x"><a href=""></a></i>
+            </div>
+          </div>
+        </div>
+      </div>
     </footer>
-</body>
+  </body>
 </html>

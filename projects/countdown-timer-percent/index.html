@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Simple Countdown Timer</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+    }
+
+    body div {
+      width: 100%;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .main-clock {
+      width: 60%;
+      height: auto;
+      border-radius: 15px;
+      display: block;
+      background-color: aqua;
+      border: solid 4px salmon;
+    }
+    .main-clock .clock-grid {
+      border: 7px;
+      padding: 5px;
+      width: 100%;
+      height: 200px;
+      display: grid;
+      grid-template-columns: 1fr 5% 1fr 5% 1fr 30%;
+    }
+    .main-clock .clock-grid .sparate,
+    .main-clock .clock-grid .hour,
+    .main-clock .clock-grid .minute,
+    .main-clock .clock-grid .second,
+    .main-clock .clock-grid .number {
+      width: 100%;
+      height: 200px;
+      color: rgb(31, 31, 31);
+      display: flex;
+      flex-direction: row;
+    }
+    .digit, .sparate {
+      font-size: 50px;
+      font-weight: bold;
+    }
+
+    .btn-start {
+      width: 60%;
+      height: 80px;
+      background-color: salmon;
+      border-radius: 360px;
+      font-size: 40px;
+      font-weight: bold;
+      color: white;
+      cursor: pointer;
+    }
+    .btn-start:hover {
+      background-color: rgb(22, 112, 185);
+    }
+    .minus, .plus {
+      width: 50%;
+      height: 30px;
+      cursor: pointer;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .minus:hover {
+      color: rgb(22, 112, 185);
+    }
+    .plus:hover {
+      color: rgb(22, 112, 185);
+    }
+    .notif {
+      width: 65%;
+      height: 100px;
+      padding: 30px;
+    }
+    .percent {
+      width: 65%;
+      height: 30px;
+      padding: 10px 35px 10px 35px;
+      display: flex;
+      align-items: start;
+      justify-content: left;
+    }
+    .notif-base {
+      border-radius: 4px;
+      width: 100%;
+      height: auto;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .percent-base {
+      width: 0%;
+      height: 30px;
+      background-color: slateblue;
+      border-radius: 360px;
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <div>
+
+      <div class="notif">
+        <div class="notif-base">
+          <h4>Time Has Ended</h4>
+        </div>
+      </div>
+
+      <div class="percent">
+        <div class="percent-base"></div>
+      </div>
+
+      <div class="main-clock">
+        <div class="clock-grid">
+          
+          <div class="hour digit">
+            <div class="minus" onclick="minus('hour')">-</div>
+            <span class="hour-val">00</span>
+            <div class="plus" onclick="plus('hour')">+</div>
+          </div>
+
+          <div class="sparate">:</div>
+          <div class="minute digit">
+            <div class="minus" onclick="minus('minute')">-</div>
+            <span class="minute-val">00</span>
+            <div class="plus" onclick="plus('minute')">+</div>
+          </div>
+          
+          <div class="sparate">:</div>
+          <div class="second digit">
+            <div class="minus" onclick="minus('second')">-</div>
+            <span class="second-val">00</span>
+            <div class="plus" onclick="plus('second')">+</div>  
+          </div>
+          
+          <div class="number">
+            <div class="btn-start" onclick="start_timer()">
+              Start
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <script>
+    let hour = 0, minute = 0, second = 0;
+    const tag_btn = document.querySelector('.btn-start');
+    const tag_notif = document.querySelector('.notif-base');
+    const tag_minus = document.querySelectorAll('.minus');
+    const tag_plus = document.querySelectorAll('.plus');
+    const tag_percent = document.querySelector('.percent-base');
+    let percent_max;
+    let percent_current = 0;
+    let ID_INTERVAL;
+
+    function updateClock() {
+      const tag_hour = document.querySelector('.hour-val');
+      const tag_minute = document.querySelector('.minute-val');
+      const tag_second = document.querySelector('.second-val');
+
+      level(tag_hour, hour);
+      level(tag_minute, minute);
+      level(tag_second, second);
+
+      tag_hour.innerHTML = hour;
+      tag_minute.innerHTML = minute;
+      tag_second.innerHTML = second;
+
+      let width_percent = ((percent_current/percent_max)*100);
+      tag_percent.style.width = width_percent+'%';
+      console.log('width percent: '+width_percent);
+    }
+
+    function check_less() {
+      if(hour < 0 || minute < 0 || second < 0) {
+        alert('Min number 0')
+        hour = (hour < 0) ? 0 : hour;
+        minute = (minute < 0) ? 0 : minute;
+        second = (second < 0) ? 0 : second;
+      }
+    }
+
+    function check_greater() {
+      if(hour > 60 || minute > 60 || second > 60) {
+        alert('Max number 60')
+        hour = (hour > 60) ? 60 : hour;
+        minute = (minute > 60) ? 60 : minute;
+        second = (second > 60) ? 60 : second;
+      }
+    }
+
+    function level(tag, digit) {
+      if(digit <= 20) {
+        tag.style.color = 'red';
+      }
+      else if(digit >= 20 && digit <= 40) {
+        tag.style.color = 'orange';
+      }
+      else if(digit >= 40 && digit <= 60) {
+        tag.style.color = 'green';
+      }
+    }
+
+    function minus(tag) {
+      if(tag == 'hour') {
+        hour--;
+      }
+      else if(tag == 'minute') {
+        minute--;
+      }
+      else if(tag == 'second') {
+        second--;
+      }
+      check_less();
+      updateClock();
+    }
+
+    function plus(tag) {
+      if(tag == 'hour') {
+        hour++;
+      }
+      else if(tag == 'minute') {
+        minute++;
+      }
+      else if(tag == 'second') {
+        second++;
+      }
+      check_greater();
+      updateClock();
+    }
+
+    function start() {
+      if(hour <= 0 && minute <= 0 && second <= 0) {
+        console.log('Timer Ended');
+        tag_notif.style = 'background-color: salmon;';
+        tag_btn.setAttribute("onClick", "start_timer()");
+        tag_btn.innerHTML = 'Start'
+        clearInterval(ID_INTERVAL);
+        show_counter();
+        tag_percent.style.width = '0%';
+        return;
+      }
+      else if(second <= 0 && minute > 0) {
+        second = 60;
+        minute--;
+      }
+      else if(second <= 0 && minute <= 0 && hour > 0) {
+        second = 60;
+        minute = 60;
+        hour--;
+      }
+      second--;
+      updateClock();
+      percent_current++;
+    }
+
+    function hide_counter() {
+      tag_minus.forEach(element => {
+        element.style = 'display: none;';
+      });
+      tag_plus.forEach(element => {
+        element.style = 'display: none;';
+      });
+    }
+
+    function show_counter() {
+      tag_minus.forEach(element => {
+        element.style = 'display: flex;';
+      });
+      tag_plus.forEach(element => {
+        element.style = 'display: flex;';
+      });
+    }
+
+    function start_timer() {
+      console.log('Timer Started');
+      hide_counter();
+      tag_notif.style = 'background-color: none;';
+      tag_btn.setAttribute( "onClick", "stop_timer()");
+      tag_btn.innerHTML = 'Stop'
+
+      percent_max = (hour * 3600) + (minute * 60) + second;
+      console.log('max percent: '+percent_max);
+
+      ID_INTERVAL = setInterval(start, 100);
+    }
+
+    function stop_timer() {
+      console.log('Timer Pause');
+      show_counter();
+      // Stop Interval
+      clearInterval(ID_INTERVAL);
+      tag_btn.setAttribute( "onClick", "start_timer()");
+      tag_btn.innerHTML = 'Start'
+    }
+  </script>
+</body>
+</html>

@@ -6,6 +6,8 @@
   <title>Kalkulator</title>
 
   <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+    
     * {
       margin: 0;
       padding: 0;
@@ -95,7 +97,7 @@
         <div class="btn PI" onclick="btn('PI')">PI</div>
         <div class="btn" onclick="btn('x-square')">X^2</div>
         <div class="btn" onclick="btn('%')">%</div>
-        <div class="btn" onclick="btn('div')">div</div>
+        <div class="btn" onclick="btn('÷')">÷</div>
 
         <div class="btn" onclick="btn('7')">7</div>
         <div class="btn" onclick="btn('8')">8</div>
@@ -144,17 +146,18 @@
       }
       else if(label == 'DEL') {
         console.log('User click DEL');
-        number_show.innerHTML = 0;
+        const text = number_show.innerText.trim();
+        number_show.innerHTML = text.substring(0, text.length - 1);
         num_operate = 0;
       }
       else if(label == 'dot' && lastCharacter != '.') {
         console.log('User click dot');
         number_show.innerHTML += '.';
       }
-      else if(label == 'div' && lastCharacter != '/') {
+      else if(label == '÷' && lastCharacter != '÷') {
         console.log('User click div');
-        number_show.innerHTML += '/';
-        oprt = 'div';
+        number_show.innerHTML += '÷';
+        oprt = '÷';
       }
       else if(label == 'x-square' && lastCharacter != 'xxx') {
         console.log('User click x-square');
@@ -209,7 +212,7 @@
           num_operate -= num_click;
           oprt = null;
         }
-        else if(oprt == 'div') {
+        else if(oprt == '÷') {
           num_operate /= num_click;
           oprt = null;
         }

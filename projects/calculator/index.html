@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kalkulator</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      /* agar tetap sesuai ukuran layar, tidak melebar */
+      box-sizing: border-box;
+    }
+    .main {
+      width: 100%;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 10px;
+    }
+    .calc-main {
+      width: 100%;
+      height: 100%;
+      background-color: salmon;
+      border-radius: 8px;
+      max-width: 600px;
+    }
+    .calc-display {
+      width: 100%;
+      height: 30%;
+      border-top-left-radius: 8px;
+      border-top-right-radius: 8px;
+      display: flex;
+      justify-content: end;
+      padding: 10px;
+    }
+    .calc-display-number {
+      background-color: rgb(158, 75, 66);
+      border-radius: 8px;
+      padding: 10px;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: end;
+      justify-content: end;
+      overflow: auto;
+    }
+    .calc-display-number .number {
+      color: white;
+      font-size: 80px;
+      margin-left: 20px;
+    }
+    .calc-button {
+      width: 100%;
+      height: 70%;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-gap: 10px;
+      padding: 10px;
+    }
+    .btn {
+      background-color: rgb(24, 47, 97);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      color: white;
+      font-size: 22px;
+    }
+    .btn:hover {
+      background-color: rgb(20, 36, 71);
+    }
+    .result {
+      grid-column: 4 / 5;
+      grid-row: 4 / 6;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="main">
+    <div class="calc-main">
+
+      <div class="calc-display">
+
+        <div class="calc-display-number">
+          <div class="number">zero</div>
+        </div>
+      </div>
+
+      <div class="calc-button">
+        <div class="btn PI" onclick="btn('PI')">PI</div>
+        <div class="btn" onclick="btn('x-square')">X^2</div>
+        <div class="btn" onclick="btn('%')">%</div>
+        <div class="btn" onclick="btn('div')">div</div>
+
+        <div class="btn" onclick="btn('7')">7</div>
+        <div class="btn" onclick="btn('8')">8</div>
+        <div class="btn" onclick="btn('9')">9</div>
+        <div class="btn" onclick="btn('x')">X</div>
+
+        <div class="btn" onclick="btn('4')">4</div>
+        <div class="btn" onclick="btn('5')">5</div>
+        <div class="btn" onclick="btn('6')">6</div>
+        <div class="btn" onclick="btn('+')">+</div>
+
+        <div class="btn" onclick="btn('1')">1</div>
+        <div class="btn" onclick="btn('2')">2</div>
+        <div class="btn" onclick="btn('3')">3</div>
+        <div class="btn result" onclick="btn('equals')">=</div>
+
+        <div class="btn" onclick="btn('dot')">.</div>
+        <div class="btn" onclick="btn('0')">0</div>
+        <div class="btn" onclick="btn('DEL')">DEL</div>
+      </div>
+    </div>
+  </main>
+
+  <script>
+    const number_show = document.querySelector('.number');
+    var num_operate = 0;
+    var oprt = null;
+    var num_click = -1;
+
+    function btn(label) {
+      if(number_show.innerHTML == 'zero') {
+        number_show.innerHTML = null;
+        num_operate = 0;
+      }
+      
+      const text = number_show.innerText.trim();
+      const lastCharacter = text[text.length - 1];
+
+      if(label == 'PI' && number_show.innerHTML != '3.14') {
+        console.log('User click PI');
+        number_show.innerHTML += 3.14;
+      }
+      else if(label == 'equals') {
+        console.log('User click equals');
+        number_show.innerHTML = num_operate;
+      }
+      else if(label == 'DEL') {
+        console.log('User click DEL');
+        number_show.innerHTML = 0;
+        num_operate = 0;
+      }
+      else if(label == 'dot' && lastCharacter != '.') {
+        console.log('User click dot');
+        number_show.innerHTML += '.';
+      }
+      else if(label == 'div' && lastCharacter != '/') {
+        console.log('User click div');
+        number_show.innerHTML += '/';
+        oprt = 'div';
+      }
+      else if(label == 'x-square' && lastCharacter != 'xxx') {
+        console.log('User click x-square');
+        // number_show.innerHTML = ;
+      }
+      else if(label == '+' && lastCharacter != '+') {
+        console.log('User click +');
+        number_show.innerHTML += '+';
+        oprt = '+';
+      }
+      else if(label == '-' && lastCharacter != '-') {
+        console.log('User click -');
+        number_show.innerHTML += '-';
+        oprt = '-';
+      }
+      else if(label == 'x' && lastCharacter != 'x') {
+        console.log('User click x');
+        number_show.innerHTML += 'x';
+        oprt = 'x';
+      }
+      else if(label == '%' && lastCharacter != '%') {
+        console.log('User click %');
+        number_show.innerHTML += '%';
+      }
+      else {
+        for(let i = 0; i < 10; i++) {
+          if(label == i.toString()) {
+            console.log('For: User click '+i);
+            number_show.innerHTML += i;
+            if(oprt != null) {
+              num_click = i;
+              break;
+            }
+            else {
+              num_operate *= 10;
+              num_operate += i;
+            }
+          }
+        }
+      }
+
+      if((oprt != null || oprt != '') && num_click >= 0) {
+        if(oprt == '+') {
+          num_operate += num_click;
+          oprt = null;
+        }
+        else if(oprt == 'x') {
+          num_operate *= num_click;
+          oprt = null;
+        }
+        else if(oprt == '-') {
+          num_operate -= num_click;
+          oprt = null;
+        }
+        else if(oprt == 'div') {
+          num_operate /= num_click;
+          oprt = null;
+        }
+        else if(label == '0') {
+          console.log('User click 0');
+          number_show.innerHTML += 0;
+          num_operate *= 10;
+        }
+        num_click = -1;
+      }
+      console.log(num_operate);
+    }
+  </script>
+</body>
+</html>

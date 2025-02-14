@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Game Minesweeper | Ifandika</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    main {
+      width: 100%;
+      height: 100vh;
+      padding: 20px 40px 20px 40px;
+      background-color: rgb(14, 88, 14);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+    .base-grid {
+      width: 100%;
+      height: 100%;
+      display: grid;
+      grid-template-columns: repeat(11, 1fr);
+      grid-template-rows: repeat(10, 1fr);
+      cursor: pointer;
+      text-align: center;
+      max-width: 850px;
+    }
+    .box {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 35px;
+      color: white;
+    }
+    .box:hover {
+      background-color: salmon;
+      /* transition: background-color 1s ease; */
+    }
+    .bar {
+      width: auto;
+      height: auto;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      margin-bottom: 10px;
+    }
+    .bar .left {
+      display: flex;
+      flex-direction: row;
+      justify-content: end;
+      align-items: center;
+      margin-right: 20px;
+      background-color: rgb(19, 151, 58);
+      border-radius: 8px;
+      padding: 10px;
+    }
+    .bar .right {
+      display: flex;
+      flex-direction: row;
+      justify-content: start;
+      align-items: center;
+      margin-left: 20px;
+      background-color: rgb(19, 151, 58);
+      border-radius: 8px;
+      padding: 10px;
+    }
+    .bar .left img,
+    .bar .right img {
+      margin-right: 10px;
+      height: 30px;
+      width: 30px;
+    }
+    .txt {
+      font-size: 25px;
+      color: white;
+      font-weight: bold;
+    }
+
+    #openPopup {
+      background-color: salmon;
+      color: white;
+      border-radius: 5px;
+      padding: 10px;
+      border: none;
+      margin: 100px;
+    }
+
+    /* The overlay */
+    .overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.5);
+      display: none;
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+    }
+
+    /* The popup box */
+    .popup {
+      background: #126b0f;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+      color: white;
+      text-align: center;
+      max-width: 400px;
+      width: 90%;
+    }
+
+    .popup h2 {
+      margin: 0 0 15px;
+    }
+
+    .popup p {
+      margin: 10px 0;
+    }
+
+    .popup button {
+      padding: 10px 20px;
+      border: none;
+      background-color: #007bff;
+      color: #fff;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .popup button:hover {
+      background-color: #0056b3;
+    }
+
+    /* Show popup when overlay is active */
+    .overlay.active {
+      display: flex;
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <div class="bar">
+      <div class="left">
+        <img src="../resources/report.png" alt="">
+        <div class="txt">20 (Boom)</div>
+      </div>
+      <div class="right">
+        <img class="time" src="../resources/clock.png" alt="">
+        <div class="txt txt-time">00000</div>
+      </div>
+    </div>
+    <div class="base-grid"></div>
+
+    <!-- Pop Up -->
+    <div class="overlay" id="popupOverlay">
+      <div class="popup">
+        <h2>Booommm</h2>
+        <p>Brother, looks like you selected the wrong box ...</p>
+        <button id="closePopup">Try again</button>
+      </div>
+    </div>
+  </main>
+  <script>
+    const base = document.querySelector('.base-grid');
+    const tag_right = document.querySelector('.right');
+    const tag_time = document.querySelector('.txt-time');
+    let is_time = 0;
+    var boom = new Array();
+    let next = true;
+    let clicked = false;
+    let date = new Date();
+    let id_time;
+    let total_clicked = 0;
+
+    function start_time() {
+      is_time++;
+      tag_time.innerHTML = is_time;
+    }
+
+    function init() {
+      for(let i=1; i<200; i++) {
+        const new_e = document.createElement('div');
+        if(boom.includes(i)) {
+          new_e.setAttribute('class', 'off box box-'+i);
+          new_e.setAttribute('onclick', 'play('+i+', true)');
+        }
+        else {
+          new_e.setAttribute('class', 'off box box-'+i);
+          new_e.setAttribute('onclick', 'play('+i+', false)');
+        }
+        if(next) {
+          new_e.style = 'background-color: rgb(24, 199, 24);'
+          next = false;
+        }
+        else {
+          new_e.style = 'background-color: rgb(26, 153, 26);'
+          next = true;
+        }
+        base.append(new_e);
+      }
+    }
+
+    function create_boom() {
+      for(let i = 1; i <= 20; i++) {
+        let rand = Math.floor(Math.random() * (110 - 1)) + 1;
+        if(!boom.includes(rand)) {
+          boom.push(rand);
+          // console.log(i+' = '+rand);
+        }
+      }
+    }
+
+    function play(number, b) {
+      if(!clicked) {
+        console.log('clicked');
+        clicked = true;
+        id_time = setInterval(start_time, 500);
+        tag_right.style = 'background-color: rgb(25, 207, 80);';
+      }
+      const box = document.querySelector('.box-'+number);
+      if(b) {
+        // popupOverlay.classList.add("active");
+        for(let i=0; i<=20; i++) {
+          const box_boom = document.querySelector('.box-'+boom[i]);
+          box_boom.innerHTML = '<h4>BOM</h4>';
+          box_boom.style.cssText = `
+            border: solid 2px white;
+            background-color: rgb(170, 20, 20);
+            font-size: 22px;
+          `;
+        }
+        clearInterval(id_time);
+        return;
+      }
+      
+      box.innerHTML = '<h4>'+number+'</h4>';
+      let label = box.getAttribute('class').split(" ");
+      if(label[0] == 'off') {
+        if(number % 2 == 0) {
+          box.style = 'background-color: rgb(116, 83, 34);';
+        }
+        else {
+          box.style = 'background-color: rgb(199, 163, 86);';
+        }
+        box.setAttribute('class', 'on box box-'+number);
+        total_clicked++;
+      }
+      
+      console.log(total_clicked);
+      if(total_clicked == 90) {
+        alert('You Win :v');
+        window.location.reload();
+      }
+    }
+
+    const closePopupButton = document.getElementById("closePopup");
+    const popupOverlay = document.getElementById("popupOverlay");
+
+    // Hide the popup
+    closePopupButton.addEventListener("click", () => {
+      popupOverlay.classList.remove("active");
+      window.location.reload();
+    });
+
+    // Close popup by clicking outside the box
+    // popupOverlay.addEventListener("click", (e) => {
+    //   if (e.target === popupOverlay) {
+    //     popupOverlay.classList.remove("active");
+    //   }
+    // });
+
+    create_boom();
+    init();
+  </script>
+</body>
+</html>

@@ -213,6 +213,12 @@ body {
     padding-right: 10px;
 }
 
+.p-preview {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
 @media only screen and (max-width: 900px) {
     .my-mark {
         display: inline;

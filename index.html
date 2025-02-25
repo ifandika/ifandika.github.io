@@ -43,7 +43,7 @@
     <div class="main c-background">
       <br />
       <h2 class="c-white ta-center">
-        Welcome <span class="c-salmon">bro...</span>
+        Assalamu'alaikum <span class="c-salmon">brother...</span>
       </h2>
       <br />
 
@@ -128,34 +128,82 @@
         </div>
       </div>
 
-      <!-- <div class="educations ml-mr-30">
-                <div>
-                    <h6 class="fw-bold">
-                        <div class="my-mark">
-                            <a title="UMPwr" href="https://www.umpwr.ac.id/">S1 - Universitas Muhammadiyah Purworejo</a>
-                        </div>
-                        <div class="separator d-inline c-gray">-</div>
-                        <div class="d-inline c-white">
-                            <i>Information Technology</i>
-                        </div>
-                    </h6>
-                </div>
-                <div>
-                    <h6 class="fw-bold">
-                        <div class="my-mark">
-                            <a
-                                title="SMK TKM"
-                                href="https://www.smktkmteknikpwr.sch.id/"
-                                >SMK Taman Karya Madya Teknik Purworejo</a
-                            >
-                        </div>
-                        <div class="separator d-inline c-gray">-</div>
-                        <div class="d-inline c-white">
-                            <i>Computer Network Engineering</i>
-                        </div>
-                    </h6>
-                </div>
-            </div> -->
+  <!-- <div class="educations ml-mr-30">
+            <div>
+                <h6 class="fw-bold">
+                    <div class="my-mark">
+                        <a title="UMPwr" href="https://www.umpwr.ac.id/">S1 - Universitas Muhammadiyah Purworejo</a>
+                    </div>
+                    <div class="separator d-inline c-gray">-</div>
+                    <div class="d-inline c-white">
+                        <i>Information Technology</i>
+                    </div>
+                </h6>
+            </div>
+            <div>
+                <h6 class="fw-bold">
+                    <div class="my-mark">
+                        <a
+                            title="SMK TKM"
+                            href="https://www.smktkmteknikpwr.sch.id/"
+                            >SMK Taman Karya Madya Teknik Purworejo</a
+                        >
+                    </div>
+                    <div class="separator d-inline c-gray">-</div>
+                    <div class="d-inline c-white">
+                        <i>Computer Network Engineering</i>
+                    </div>
+                </h6>
+            </div>
+        </div> -->
+      
+      <br />
+      <br />
+      <div style="width: 100%; display: flex; justify-content: center; align-items: center;">
+        <h4 class="c-white">Field</h4>
+      </div>
+      <div class="grid-bento-field">
+        <div class="box" style="grid-area: box-1; background-color: green;">
+          <div class="title">Software<br>Engineering</div>
+          <div class="desc">
+            A software engineer is a professional who designs, develops, tests, and maintains software applications and computer systems. They use programming languages and engineering principles to create software that meets user needs.
+          </div>
+        </div>
+        <div class="box" style="grid-area: box-2;">
+          Web / Apps
+          <br>
+          Development
+        </div>
+        <div class="box" style="grid-area: box-3; background-color: rgb(66, 66, 66);">
+          Competitive
+          <br>
+          Programming
+        </div>
+        <div class="box" style="grid-area: box-4; background-color: rgb(207, 117, 13);">
+          Graphic / UI / UX
+          <br>
+          Design
+        </div>
+        <div class="box" style="grid-area: box-5; background-color: rgb(17, 99, 167);">
+          Backend
+          <br>
+          Developer
+        </div>
+        <div class="box" style="grid-area: box-6; background-color: rgb(134, 14, 14);">
+          IT / AI / Linux
+          <br>
+          / Hardware / IoT
+          <br>
+          Enthusiast
+        </div>
+      </div>
+
+      <br />
+      <br />
+
+      <div style="width: 100%; display: flex; justify-content: center; align-items: center;">
+        <h4 class="c-white">Skill</h4>
+      </div>
 
       <br />
       <br />
@@ -299,8 +347,8 @@
       <br />
 
       <div class="project">
-        <div>
-          <h6 class="c-white">My Personal Project</h6>
+        <div style="width: 100%; display: flex; justify-content: center; align-items: center;">
+          <h4 class="c-white">Projects</h4>
         </div>
         <div>
           <div class="project-list">
@@ -377,8 +425,8 @@
       <br />
 
       <div class="journey">
-        <div>
-          <h6 class="c-white">My Journey !</h6>
+        <div style="width: 100%; display: flex; justify-content: center; align-items: center;">
+          <h4 class="c-white">Journey & Certificate</h4>
         </div>
         <div>
           <div class="year">
@@ -553,8 +601,12 @@
       }
 
       // For get current year
-      document.getElementById("current-year").innerHTML =
-        new Date().getFullYear();
+      document.getElementById("current-year").innerHTML = new Date().getFullYear();
+      
+      function showField() {
+        const box_field = document.querySelectorAll('.box');
+      }
+
     </script>
   </body>
 </html>

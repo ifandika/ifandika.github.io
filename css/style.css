@@ -155,7 +155,9 @@ body {
 .project-list ul li {
     margin-bottom: 10px;
 }
-
+.project-list ul {
+    padding: 10px;
+}
 .line-down {
     width: 100%;
     height: auto;

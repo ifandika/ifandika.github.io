@@ -45,7 +45,7 @@ body {
     width: 100%;
     /* padding: 10px 30px 10px 30px; */
     margin: auto;
-    max-width: 1100px;
+    max-width: 1200px;
 }
 @keyframes move-bg {
     to {
@@ -91,12 +91,12 @@ body {
 .profile {
     width: 150px;
     height: 150px;
-    border: solid #284775 5px;
+    /* border: solid #284775 5px;
     border-radius: 100%;
     -webkit-border-radius: 100%;
     -moz-border-radius: 100%;
     -ms-border-radius: 100%;
-    -o-border-radius: 100%;
+    -o-border-radius: 100%; */
 }
 
 .motto {
@@ -187,27 +187,31 @@ body {
     grid-template-columns: 60% 40%;
 }
 .main .main-profile .grid .grid-left {
-    background-color: #284775;
-    border-bottom-left-radius: 10px;
-    border-top-left-radius: 10px;
+    /* background-color: #284775;
+    border-bottom-left-radius: 10px; */
+    /* border-top-left-radius: 10px; */
     width: 100%;
     height: auto;
-    border-bottom: solid 4px salmon;
+    border-left: solid 4px salmon;
     padding: 25px;
 }
 
 .main .main-profile .grid .grid-right {
-    background-color: #868686;
-    border-top-right-radius: 10px;
-    border-bottom-right-radius: 10px;
+    background-color: #131f31;
+    /* border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px; */
     width: 100%;
     height: auto;
-    border-right: solid 4px salmon;
-    border-bottom: solid 4px salmon;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
 }
 .main .main-profile .grid .grid-right img {
     width: 100%;
     height: auto;
+    left: 0;
+    right: 0;
+    bottom: 0;
 }
 
 .grid-bento-field {
@@ -256,17 +260,8 @@ body {
     .main .main-profile .grid {
         grid-template-columns: 1fr;
     }
-    .main .main-profile .grid .grid-left {
-        border-radius: 0;
-        border-top-left-radius: 10px;
-        border-top-right-radius: 10px;
-        border-bottom: none;
-        border-right: solid 4px salmon;
-    }
     .main .main-profile .grid .grid-right {
-        border-radius: 0;
-        border-bottom-left-radius: 10px;
-        border-bottom-right-radius: 10px;
+        border-left: solid 4px salmon;
     }
     .grid-bento-field {
         grid-template-columns: repeat(3, 1fr);

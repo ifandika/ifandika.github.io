@@ -363,6 +363,55 @@ body {
     grid-template-columns: repeat(3, 1fr);
 }
 
+/* Education */
+.edu-card-base {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.edu-card {
+    width: 550px;
+    height: 250px;
+    background-color: white;
+    border-radius: 4px;
+    padding: 15px;
+    margin-bottom: 30px;
+}
+.edu-card .top .left img {
+    width: 80px;
+    height: 80px;
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+.edu-card .top {
+    width: 100%;
+    height: 90px;
+    display: grid;
+    grid-template-columns: 20% 80%;
+}
+.edu-card .bottom {
+    font-size: 15px;
+}
+.edu-card .bottom p {
+    margin-bottom: 5px;
+}
+.edu-card .top .left {
+    display: flex;
+}
+.edu-card .top .right p {
+    font-size: 15px;
+    margin-bottom: 5px;
+}
+.edu-card .top .right .degree {
+    font-size: 18px;
+    font-weight: bold;
+}
+.edu-card .top .right .name {
+    font-weight: bold;
+}
+
 @media only screen and (max-width: 550px) {
     .grid-bento-field {
         grid-template-columns: repeat(2, 1fr);

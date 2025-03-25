@@ -3,9 +3,102 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>Framework Hapi | Set Up</title>
+  <!-- HiglightJs -->
+  <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css"> -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/atom-one-dark.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+  <script>hljs.highlightAll();</script>
+  <style>
+    body {
+      width: auto;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      padding: 10px;
+    }
+    .base {
+      width: 100%;
+      height: auto;
+      max-width: 1200px;
+    }
+    img {
+      display: flex;
+      width: 80%;
+      height: auto;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    pre {
+      margin: 0;
+      padding: 0;
+      height: auto;
+      width: auto;
+    }
+    pre code.hljs {
+      font-size: 14px;
+      padding: 0 10px 0 10px !important;
+      border-left: solid brown 4px;
+    }
+  </style>
 </head>
 <body>
-  
+  <div class="base">
+    <h2>Framework Hapi | Set Up</h2>
+    <h2>Download Hapi</h2>
+    <p>
+      Pertama pastikan sudah membuat projek NodeJs, untuk contoh default projek NodeJs.
+      <br>
+      <pre class="my-code">
+        <code class="cmake">
+// membuat folder
+$ mkdir
+
+// Init folder menjadi projek
+$ npm init -y
+
+$ cd demo-hapi
+        </code>
+      </pre>
+      Kemudian mengunduh module Hapi pada project NodeJs kita, setiap install dari Hapi diawali dengan @hapi/[module_or_plugin].
+      <br>
+      <pre class="my-code">
+        <code class="cmake">
+$ npm install @hapi/hapi
+added 30 packages, and audited 31 packages in 18s
+
+found 0 vulnerabilities
+        </code>
+      </pre>
+      Jika berhasil terinstall maka akan ada folder baru node_modules berisi module yang diinstall. Maka Hapi siap digunakan pada projek tersebut.
+      <br>
+      <pre>
+        <code class="cmake">
+$ ls node_modules/
+'@hapi'/                       jwa/                    lodash.isstring/
+'@sideway'/                    jws/                    lodash.once/
+ bcryptjs/                     lodash.includes/        mime-db/
+ buffer-equal-constant-time/   lodash.isboolean/       ms/
+ ecdsa-sig-formatter/          lodash.isinteger/       safe-buffer/
+ joi/                          lodash.isnumber/        semver/
+ jsonwebtoken/                 lodash.isplainobject/          
+        </code>
+      </pre>
+      Untuk mengunduh module lain bisa kunjungi daftar module yang tersedia (<a href="https://hapi.dev/module/?sort=name">https://hapi.dev/module/?sort=name</a>)
+      <br>
+      <pre>
+        <code class="cmake">
+// Contoh install module inert
+$ npm install @hapi/inert
+        </code>
+      </pre>
+    </p>
+  </div>
+  <div class="footer">
+    <p>By Maulana Ifandika</p>
+  </div>
 </body>
 </html>

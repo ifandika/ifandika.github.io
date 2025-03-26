@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Framework Hapi | Set Up</title>
+  <title>Framework Hapi | Routes</title>
   <!-- HiglightJs -->
   <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css"> -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/atom-one-dark.min.css">
@@ -47,52 +47,43 @@
 </head>
 <body>
   <div class="base">
-    <h2>Framework Hapi | Set Up</h2>
-    <h2>Download Hapi</h2>
+    <h2>Framework Hapi | Routes</h2>
+    <h2>Langkah</h2>
     <p>
-      Pertama pastikan sudah membuat projek NodeJs, untuk contoh default projek NodeJs.
+      Routes digunakan untuk menghandle/menangani permintaan dari alamat yang diakses beserta method-nya. Untuk kode minimal
+      routes sebagai berikut.
       <br>
       <pre class="my-code">
-        <code class="cmake">
-// membuat folder
-$ mkdir
-
-// Init folder menjadi projek
-$ npm init -y
-
-$ cd demo-hapi
+        <code class="javascript">
+server.route({
+  method: 'GET|POST|PUT|DELTE',
+  path: '/hello',
+  handler: function(request, h) {
+    return h.response('Success').code(201);
+  }
+})
         </code>
       </pre>
-      Kemudian mengunduh module Hapi pada project NodeJs kita, setiap install dari Hapi diawali dengan @hapi/[module_or_plugin].
-      <br>
+      Untuk keterangannya.
+      <ul>
+        <li>method: Ini untuk jenis method dari permintaan, apakah GET, POST, dll</li>
+        <li>path: adalah alamat yang dapat diakses</li>
+        <li>handler: apa yang akan dilakukan server ketika permintaan datang, memproses permintaan lewat fungsi, parameter request 
+          adalah dari data yang dikirim, jika "h" untuk response.
+        </li>
+      </ul>
+      Contoh untuk routes CRUD (Create, Read, Update, Delete)
       <pre class="my-code">
-        <code class="cmake">
-$ npm install @hapi/hapi
-added 30 packages, and audited 31 packages in 18s
+        <code class="javascript">
 
-found 0 vulnerabilities
         </code>
       </pre>
-      Jika berhasil terinstall maka akan ada folder baru node_modules berisi module yang diinstall. Maka Hapi siap digunakan pada projek tersebut.
+      Jika sudah dapat diakses lewat browser atau curl dengan method GET dan alamat http://localhost:3000/hello, maka akan terdapat
+      tulisan "Hello from server".
       <br>
       <pre>
         <code class="cmake">
-$ ls node_modules/
-'@hapi'/                       jwa/                    lodash.isstring/
-'@sideway'/                    jws/                    lodash.once/
- bcryptjs/                     lodash.includes/        mime-db/
- buffer-equal-constant-time/   lodash.isboolean/       ms/
- ecdsa-sig-formatter/          lodash.isinteger/       safe-buffer/
- joi/                          lodash.isnumber/        semver/
- jsonwebtoken/                 lodash.isplainobject/          
-        </code>
-      </pre>
-      Untuk mengunduh module lain bisa kunjungi daftar module yang tersedia (<a href="https://hapi.dev/module/?sort=name">https://hapi.dev/module/?sort=name</a>)
-      <br>
-      <pre>
-        <code class="cmake">
-// Contoh install module inert
-$ npm install @hapi/inert
+
         </code>
       </pre>
     </p>

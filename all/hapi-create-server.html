@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Framework Hapi | Set Up</title>
+  <title>Framework Hapi | Create Server</title>
   <!-- HiglightJs -->
   <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css"> -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/atom-one-dark.min.css">
@@ -47,52 +47,69 @@
 </head>
 <body>
   <div class="base">
-    <h2>Framework Hapi | Set Up</h2>
-    <h2>Download Hapi</h2>
+    <h2>Framework Hapi | Create Server</h2>
+    <h2>Langkah</h2>
     <p>
-      Pertama pastikan sudah membuat projek NodeJs, untuk contoh default projek NodeJs.
+      Pastikan sudah membaut projek dan mengunduh modul @hapi/hapi. Pertama buat file index.js, file ini digunakan untuk server
       <br>
       <pre class="my-code">
         <code class="cmake">
-// membuat folder
-$ mkdir
-
-// Init folder menjadi projek
-$ npm init -y
-
-$ cd demo-hapi
+// Membuat file
+$ touch index.js
         </code>
       </pre>
-      Kemudian mengunduh module Hapi pada project NodeJs kita, setiap install dari Hapi diawali dengan @hapi/[module_or_plugin].
+      Kemudian untuk kode server dari hapi
       <br>
       <pre class="my-code">
-        <code class="cmake">
-$ npm install @hapi/hapi
-added 30 packages, and audited 31 packages in 18s
+        <code class="javascript">
+const Hapi = require('@hapi/hapi');
 
-found 0 vulnerabilities
+const init = async() => {
+  // Untuk konfigurasi server
+  const server = Hapi.server({
+    port: 3000,
+    host: 'localhost'
+  });
+
+  // Untuk route, deklarasi untuk alamat yang akan diakses
+  server.route({
+    method: 'GET',
+    path: '/hello',
+    handler: function(request) {
+      return `<h1>Hello from server</h1>`;
+    }
+  });
+
+  // Karena async maka perlu await hingga server berhasil dijalankan
+  await server.start();
+  console.log('Server running on %s', server.info.uri);
+};
+
+// Untuk handle eror
+process.on('unhandledRejection', (err) => {
+  console.log(err)
+  process.exit(1);
+});
+
+// Panggil fungsi
+init();
         </code>
       </pre>
-      Jika berhasil terinstall maka akan ada folder baru node_modules berisi module yang diinstall. Maka Hapi siap digunakan pada projek tersebut.
+      Jika sudah dapat diakses lewat browser atau curl dengan method GET dan alamat http://localhost:3000/hello, maka akan terdapat
+      tulisan "Hello from server".
       <br>
       <pre>
         <code class="cmake">
-$ ls node_modules/
-'@hapi'/                       jwa/                    lodash.isstring/
-'@sideway'/                    jws/                    lodash.once/
- bcryptjs/                     lodash.includes/        mime-db/
- buffer-equal-constant-time/   lodash.isboolean/       ms/
- ecdsa-sig-formatter/          lodash.isinteger/       safe-buffer/
- joi/                          lodash.isnumber/        semver/
- jsonwebtoken/                 lodash.isplainobject/          
-        </code>
-      </pre>
-      Untuk mengunduh module lain bisa kunjungi daftar module yang tersedia (<a href="https://hapi.dev/module/?sort=name">https://hapi.dev/module/?sort=name</a>)
-      <br>
-      <pre>
-        <code class="cmake">
-// Contoh install module inert
-$ npm install @hapi/inert
+$ curl -X GET http://localhost:3000/hello -i
+HTTP/1.1 201 Found
+content-type: text/html; charset=utf-8
+cache-control: no-cache
+content-length: 26
+Date: Tue, 18 Mar 2025 02:19:37 GMT
+Connection: keep-alive
+Keep-Alive: timeout=5
+
+Hello from server
         </code>
       </pre>
     </p>

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MySQL | Command SQL</title>
+  <!-- HiglightJs -->
+  <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css"> -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/atom-one-dark.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+  <script>hljs.highlightAll();</script>
+  <style>
+    body {
+      width: auto;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      padding: 10px;
+    }
+    .base {
+      width: 100%;
+      height: auto;
+      max-width: 1200px;
+    }
+    img {
+      display: flex;
+      width: 80%;
+      height: auto;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    pre {
+      margin: 0;
+      padding: 0;
+      height: auto;
+      width: auto;
+    }
+    pre code.hljs {
+      font-size: 14px;
+      padding: 0 10px 0 10px !important;
+      border-left: solid salmon 4px;
+    }
+    table, th, td {
+      border: 1px solid black;
+      border-collapse: collapse;
+      padding: 5px;
+    }
+  </style>
+</head>
+<body>
+  <div class="base">
+    <h2>MySQL | Perintah SQL</h2>
+    <h2>Perintah SQL</h2>
+    <p>
+      <ul>
+        <li><a href="#select">SELECT</a></li>
+        <li><a href="#insert-into">INSERT INTO</a></li>
+        <li><a href="#update">UPDATE</a></li>
+        <li><a href="#limit">LIMIT</a></li>
+      </ul>
+      <h2 id="select">| SELECT</h2>
+      <div>
+        Perintah ini untuk memilih data pada suatu tabel.
+        <pre>
+          <code class="mysql">
+SELECT [column] FROM [table];
+          </code>
+        </pre>
+        Untuk contoh dengan data tabel ini.
+        <br>
+        <b>Tabel: Person</b>
+        <table>
+          <tr>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Email</th>
+          </tr>
+          <tr>
+            <td>Ifandika</td>
+            <td>21</td>
+            <td>ifan@gmail.com</td>
+          </tr>
+          <tr>
+            <td>Joni</td>
+            <td>15</td>
+            <td>joni@gmail.com</td>
+          </tr>
+        </table>
+        Kemudian kita ingin mengambil dan menampilkan data.
+        <pre>
+          <code class="mysql">
+// Mengambil semua data
+SELECT * FROM Person;
+
+// Mengambil data tertentu
+SELECT Person.name, Person.age FROM Person;
+          </code>
+        </pre>
+      </div>
+
+      <h2 id="insert-into">| INSERT INTO</h2>
+      <h2 id="update">| UPDATE</h2>
+      <h2 id="limit">| LIMIT</h2>
+    </p>
+  </div>
+  <div class="footer">
+    <p>By Maulana Ifandika</p>
+  </div>
+</body>
+</html>

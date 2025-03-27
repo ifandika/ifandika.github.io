@@ -26,22 +26,36 @@
     />
   </head>
   <body>
-    <!-- Menu Nav -->
-    <!-- <div class="menu-nav">
-      <div class="menu-bar c-white" onclick="menu_bar()">
-        Menu
-        <i class="bi bi-chevron-double-down"></i>
-      </div>
-      <ul id="menu-list">
-        <li><a href="">Home</a></li>
-        <li><a href="">Blog</a></li>
-        <li><a href="">Project</a></li>
-      </ul> 
-    </div> -->
+    <div id="navbarContent" class="w-100 h-auto position-fixed" style="background-color: #0d1829; display: flex; align-items: center; justify-content: center;">
+      <div class="navbar-base w-100 h-auto" style="max-width: 1200px;">
+        <nav class="navbar navbar-expand-lg navbar-light text-white">
+          <a class="navbar-brand text-white" href="https://ifandika.github.io/index.html">Ifandika.github.io</a>
+          <button style="background-color: #0d2850;" class="navbar-toggler text-white" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+              <li class="nav-item">
+                <a class="nav-link text-white my-navmenu" href="https://ifandika.github.io/index.html">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-white my-navmenu" href="#">Contact</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-white my-navmenu" href="https://ifandika.github.io/all/index.html">Pustaka</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-white my-navmenu" href="https://ifandika.github.io/projects/index.html">Projects</a>
+              </li>
+            </ul>
+          </div>
+        </nav>  
+      </div>      
+    </div>
 
     <!-- Greeting -->
-    <br />
-    <h2 class="c-white ta-center">
+    <br>
+    <h2 class="c-white ta-center pt-5">
       Assalamu'alaikum <span class="c-salmon">brother...</span>
     </h2>
     <br />
@@ -592,7 +606,10 @@
         </div>
       </div>
     </div>
-  
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script>
       // Menu bar
       function menu_bar() {
@@ -610,7 +627,6 @@
       function showField() {
         const box_field = document.querySelectorAll('.box');
       }
-
     </script>
   </body>
 </html>

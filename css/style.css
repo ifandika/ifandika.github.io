@@ -412,6 +412,10 @@ body {
     font-weight: bold;
 }
 
+.my-navmenu:hover {
+    background-color: salmon;
+}
+
 @media only screen and (max-width: 550px) {
     .grid-bento-field {
         grid-template-columns: repeat(2, 1fr);

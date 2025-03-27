@@ -4,6 +4,12 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Pustaka | Ifandika</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <!-- HiglightJs -->
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css"> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/atom-one-dark.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
     <style>
       body {
         margin: 0;
@@ -13,28 +19,73 @@
         width: auto;
         height: auto;
         padding: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
       }
       .base-main {
         width: 100%;
         height: auto;
+        max-width: 1200px;
+      }
+      .my-navmenu:hover {
+        background-color: salmon;
       }
     </style>
   </head>
   <body>
-    <div class="base">
+    <div id="navbarContent" class="w-100 h-auto position-fixed" style="background-color: #0d1829; display: flex; align-items: center; justify-content: center;">
+      <div class="navbar-base w-100 h-auto" style="max-width: 1200px;">
+        <nav class="navbar navbar-expand-lg navbar-light text-white">
+          <a class="navbar-brand text-white" href="https://ifandika.github.io/index.html">Ifandika.github.io</a>
+          <button style="background-color: #0d2850;" class="navbar-toggler text-white" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+              <li class="nav-item">
+                <a class="nav-link text-white my-navmenu" href="https://ifandika.github.io/index.html">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-white my-navmenu" href="#">Contact</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-white my-navmenu" href="https://ifandika.github.io/all/index.html">Pustaka</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-white my-navmenu" href="https://ifandika.github.io/projects/index.html">Projects</a>
+              </li>
+            </ul>
+          </div>
+        </nav>  
+      </div>      
+    </div>
+
+    <br>
+    <div class="base pt-5">
       <div class="base-main">
-        <h1>Pustaka Maulana Ifandika</h1>
+        <h2>Pustaka Maulana Ifandika</h2>
         <br>
         <div class="lists">
-          <h2>Git VCS</h2>
+          <h4>IoT: Hardware & Arduino</h4>
+          <div>
+            <ol>
+              <li><a href="iot-introduce.html">Pendahuluan</a></li>
+              <li><a href="iot-pdf-full-tutor.html">[PDF] Full Tutorial IoT</a></li>
+              <li><a href="">REFERENSI</a></li>
+            </ol>
+          </div>
+
+          <h4>Git VCS</h4>
           <div>
             <ol>
               <li><a href="git-introduce.html">Pendahuluan Git (VCS)</a></li>
               <li><a href="git-pdf-full-tutor.html">[PDF] Full Tutorial Git</a></li>
+              <li><a href="">REFERENSI</a></li>
             </ol>
           </div>
 
-          <h2>MySQL</h2>
+          <h4>MySQL</h4>
           <div>
             <ol>
               <li><a href="mysql-introduce.html">Pendahuluan MySQL</a></li>
@@ -42,32 +93,37 @@
               <li><a href="mysql-command-sql.html">Perintah MySQL SQL</a></li>
               <li><a href="mysql-command-database.html">Perintah MySQL Database</a></li>
               <li><a href="mysql-pdf-full-tutor.html">[PDF] Full Tutorial MySQL</a></li>
+              <li><a href="">REFERENSI</a></li>
             </ol>
           </div>
 
-          <h2>Framework Bootstrap</h2>
+          <h4>Framework Bootstrap</h4>
           <div>
             <ol>
               <li><a href="bootstrap-pendahuluan.html">Pendahuluan Bootstrap</a></li>
               <li><a href="bootstrap-setup.html">Set Up Bootstrap</a></li>
+              <li><a href="">REFERENSI</a></li>
             </ol>
           </div>
 
-          <h2>Framework Java Spring Boot</h2>
+          <h4>Framework Java Spring Boot</h4>
           <div>
             <ol>
               <li><a href="springboot-pendahuluan.html">Pendahuluan Spring Boot</a></li>
               <li><a href="springboot-setup.html">Set Up Spring Boot</a></li>
+              <li><a href="">REFERENSI</a></li>
             </ol>
           </div>
 
-          <h2>Framework NodeJs Hapi</h2>
+          <h4>Framework NodeJs Hapi</h4>
           <div>
             <ol>
               <li><a href="hapi-pendahuluan.html">Pendahuluan Hapi</a></li>
               <li><a href="hapi-setup.html">Set Up Framework Hapi</a></li>
               <li><a href="hapi-create-server.html">Create Server Framework Hapi</a></li>
               <li><a href="hapi-routes.html">Routes Framework Hapi</a></li>
+              <li><a href="">[PDF] Full Tutorial Hapi</a></li>
+              <li><a href="">REFERENSI</a></li>
             </ol>
           </div>
         </div>
@@ -79,14 +135,19 @@
       <p>
         The Messenger of Allah (peace and blessings of Allah be upon him) said:
         <br>
-        <h2>
+        <h5>
           خَيْرُ النَّاسِ أَنْفَعُهُمْ لِلنَّاسِ
-        </h2>
+        </h5>
         <i><b>"The best of people are those who are most beneficial to people"</b></i>
         <br>
-        <b>(Narrated by Ahmad, ath-Thabrani, ad-Daruqutni. This hadith was authenticated by al-Albani in Shahihul Jami', No. 3289).</b>
+        (Narrated by Ahmad, ath-Thabrani, ad-Daruqutni. This hadith was authenticated by al-Albani in Shahihul Jami', No. 3289).
       </p>
       <div style="width: 350px; height: 4px; background: brown; margin-left: auto; margin-right: auto;"></div>
     </div>
+
+    <!-- Js -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
   </body>
 </html>

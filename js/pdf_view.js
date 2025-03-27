@@ -5,7 +5,7 @@ function pdfView(src) {
 
   if(user_agent.indexOf("Firefox") > -1) {
     console.log("Firefox");
-    pdf_view.innerHTML = `<embed src="${src}" width="100%" height="700px">`;
+    pdf_view.innerHTML = `<embed src="${src}" width="100%" height="700px" type="application/pdf">`;
   }
   else if (user_agent.indexOf("Chrome") > -1 && user_agent.indexOf("Safari") > -1 && user_agent.indexOf("Edg") === -1 && user_agent.indexOf("OPR") === -1) {
     console.log("Chrome");

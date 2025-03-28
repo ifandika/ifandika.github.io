@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Framework Hapi | Routes</title>
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
   <!-- HiglightJs -->
   <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css"> -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/atom-one-dark.min.css">
@@ -14,13 +15,17 @@
       width: auto;
       margin: 0;
       padding: 0;
+    }
+    .base {
+      width: auto;
+      height: auto;
       display: flex;
       align-items: center;
       justify-content: center;
       flex-direction: column;
-      padding: 10px;
+      padding: 70px 10px 10px 10px;
     }
-    .base {
+    .base-main {
       width: 100%;
       height: auto;
       max-width: 1200px;
@@ -43,18 +48,49 @@
       padding: 0 10px 0 10px !important;
       border-left: solid salmon 4px;
     }
+    .my-navmenu:hover {
+      background-color: salmon;
+    }
   </style>
 </head>
 <body>
+  <div id="navbarContent" class="w-100 h-auto position-fixed" style="background-color: #0d1829; display: flex; align-items: center; justify-content: center;">
+    <div class="navbar-base w-100 h-auto" style="max-width: 1200px;">
+      <nav class="navbar navbar-expand-lg navbar-light text-white">
+        <a class="navbar-brand text-white" href="https://ifandika.github.io/index.html">Ifandika.github.io</a>
+        <button style="background-color: #0d2850;" class="navbar-toggler text-white" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link text-white my-navmenu" href="https://ifandika.github.io/index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white my-navmenu" href="#">Contact</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white my-navmenu" href="https://ifandika.github.io/pustaka/index.html">Pustaka</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white my-navmenu" href="https://ifandika.github.io/projects/index.html">Projects</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+  </div>
+
   <div class="base">
-    <h2>Framework Hapi | Routes</h2>
-    <h2>Langkah</h2>
-    <p>
-      Routes digunakan untuk menghandle/menangani permintaan dari alamat yang diakses beserta method-nya. Untuk kode minimal
-      routes sebagai berikut.
-      <br>
-      <pre class="my-code">
-        <code class="javascript">
+    <div class="base-main">
+      <h2>Framework Hapi | Routes</h2>
+      <h2>Langkah</h2>
+      <p>
+        Routes digunakan untuk menghandle/menangani permintaan dari alamat yang diakses beserta method-nya. Untuk kode minimal
+        routes sebagai berikut.
+        <br>
+        <pre class="my-code">
+          <code class="javascript">
 server.route({
   method: 'GET|POST|PUT|DELTE',
   path: '/hello',
@@ -62,34 +98,40 @@ server.route({
     return h.response('Success').code(201);
   }
 })
-        </code>
-      </pre>
-      Untuk keterangannya.
-      <ul>
-        <li>method: Ini untuk jenis method dari permintaan, apakah GET, POST, dll</li>
-        <li>path: adalah alamat yang dapat diakses</li>
-        <li>handler: apa yang akan dilakukan server ketika permintaan datang, memproses permintaan lewat fungsi, parameter request 
-          adalah dari data yang dikirim, jika "h" untuk response.
-        </li>
-      </ul>
-      Contoh untuk routes CRUD (Create, Read, Update, Delete)
-      <pre class="my-code">
-        <code class="javascript">
+          </code>
+        </pre>
+        Untuk keterangannya.
+        <ul>
+          <li>method: Ini untuk jenis method dari permintaan, apakah GET, POST, dll</li>
+          <li>path: adalah alamat yang dapat diakses</li>
+          <li>handler: apa yang akan dilakukan server ketika permintaan datang, memproses permintaan lewat fungsi, parameter request 
+            adalah dari data yang dikirim, jika "h" untuk response.
+          </li>
+        </ul>
+        Contoh untuk routes CRUD (Create, Read, Update, Delete)
+        <pre class="my-code">
+          <code class="javascript">
 
-        </code>
-      </pre>
-      Jika sudah dapat diakses lewat browser atau curl dengan method GET dan alamat http://localhost:3000/hello, maka akan terdapat
-      tulisan "Hello from server".
-      <br>
-      <pre>
-        <code class="cmake">
+          </code>
+        </pre>
+        Jika sudah dapat diakses lewat browser atau curl dengan method GET dan alamat http://localhost:3000/hello, maka akan terdapat
+        tulisan "Hello from server".
+        <br>
+        <pre>
+          <code class="cmake">
 
-        </code>
-      </pre>
-    </p>
+          </code>
+        </pre>
+      </p>
+    </div>
+    <div class="footer">
+      <p>By Maulana Ifandika</p>
+    </div>
   </div>
-  <div class="footer">
-    <p>By Maulana Ifandika</p>
-  </div>
+
+  <!-- Js -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>

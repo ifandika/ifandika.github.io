@@ -389,10 +389,14 @@ body {
 .edu-card {
     width: 450px;
     height: auto;
-    background-color: white;
+    color: white;
+    background-color: #2b4e81;
     border-radius: 4px;
     padding: 15px;
     margin-bottom: 30px;
+}
+.edu-card:hover {
+    background-color: #16253b;
 }
 .edu-card .top .left img {
     width: 60px;

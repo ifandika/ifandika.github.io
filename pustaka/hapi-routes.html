@@ -122,6 +122,89 @@ server.route({
 
           </code>
         </pre>
+        <h4>Parameter</h4>
+        Bagaimana mengambil data pada parameter yang dikirim. Untuk membuat parameter cukup berikan tanda kurung {[name]} disertai nama 
+        untuk variabel nantinya diambil. Contoh /home/{name}. Untuk membuat sebuah parameter menjadi opsional maka berikan tanda kurung (?)
+        di akhir nama. Untuk mengambil data/variabel parameter <b>request.params.[nama_parameter]</b>
+        <pre>
+          <code class="javascript">
+server.route({
+  method: 'GET',
+  path: '/hello/{name}',
+  handler: function (request, h) {
+    const name = request.params.name ? request.params.name : 'name empty';
+    return `Hello ${name}!`;
+  }
+});
+          </code>
+        </pre>
+        Lalu untuk parameter opsional.
+        <pre>
+          <code class="javascript">
+server.route({
+  method: 'GET',
+  path: '/hello/{name?}',
+  handler: function (request, h) {
+    const name = request.params.name ? request.params.name : 'name empty';
+    return `Hello ${name}!`;
+  }
+});
+          </code>
+        </pre>
+        <h4>Query Parameters</h4>
+        Untuk kasus query dapat diakses lewat <b>request.query.[nama_key]</b>. Karena isi query adalah key=value, lalu untuk contoh 
+        permintaan.
+        <br>
+        <b>http://localhost:3000/home?name=ifandika</b>
+        <br>
+        Untuk kode program query
+        <pre>
+          <code class="javascript">
+server.route({
+  method: 'GET',
+  path: '/home',
+  handler: function (request, h) {
+    const name = request.query.name;
+    // Object destructing
+    const { name } = request.query;
+    return `Hello ${name}!`;
+  }
+});
+
+// Mengambil keseluruhan data query
+server.route({
+  method: 'GET',
+  path: '/home',
+  handler: function (request, h) {
+    const res_query = request.query;
+    return `Hello ${res_query.name}!`;
+  }
+});
+          </code>
+        </pre>
+        <h4>Request Payload (Body)</h4>
+        Kemudian untuk mengambil data pada body permintaan, dengan <b>request.payload</b>. Contoh kasus login dengan payload.
+        <pre>
+          <code class="json">
+{
+  "username": "ifandika",
+  "password": "ifan123"
+}
+          </code>
+        </pre>
+        Maka ketika akses <b>http://localhost:3000/login</b> dan juga payload/body dengan format json. Lalu untuk kode programnya.
+        <pre>
+          <code class="javascript">
+server.route({
+  method: 'POST',
+  path: '/login',
+  handler: function (request, h) {
+    const payload = request.payload;
+    return `Login ${payload.username} and ${payload.password}`;
+  }
+});
+          </code>
+        </pre>
       </p>
     </div>
     <div class="footer">

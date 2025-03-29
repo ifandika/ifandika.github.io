@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Framework Hapi | Menghubungkan ke MySQL</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <!-- HiglightJs -->
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css"> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/atom-one-dark.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+      }
+      .base {
+        width: auto;
+        height: auto;
+        padding: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+      }
+      .base-main {
+        width: 100%;
+        height: auto;
+        max-width: 1200px;
+      }
+      pre {
+        margin: 0;
+        padding: 0;
+        height: auto;
+        width: auto;
+      }
+      pre code.hljs {
+        font-size: 14px;
+        padding: 0 10px 0 10px !important;
+        border-left: solid salmon 4px;
+      }
+      .my-navmenu:hover {
+        background-color: salmon;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="navbarContent" class="w-100 h-auto position-fixed" style="background-color: #0d1829; display: flex; align-items: center; justify-content: center;">
+      <div class="navbar-base w-100 h-auto" style="max-width: 1200px;">
+        <nav class="navbar navbar-expand-lg navbar-light text-white">
+          <a class="navbar-brand text-white" href="https://ifandika.github.io/index.html">Ifandika.github.io</a>
+          <button style="background-color: #0d2850;" class="navbar-toggler text-white" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+              <li class="nav-item">
+                <a class="nav-link text-white my-navmenu" href="https://ifandika.github.io/index.html">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-white my-navmenu" href="#">Contact</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-white my-navmenu" href="https://ifandika.github.io/pustaka/index.html">Pustaka</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-white my-navmenu" href="https://ifandika.github.io/projects/index.html">Projects</a>
+              </li>
+            </ul>
+          </div>
+        </nav>  
+      </div>      
+    </div>
+
+    <br>
+    <div class="base pt-5">
+      <div class="base-main">
+        <h4>Framework Hapi | Menghubungkan ke MySQL</h4>
+        <p>Bagaimana mengkoneksikan/menghubungkan Hapi ke database MySQL.</p>
+        <h4>Langkah</h4>
+        <p>
+          Pertama kita unduh modul yang digunakan untuk menghubungkan ke MySQL.
+          <br>
+          <a href="https://www.npmjs.com/package/mysql2">https://www.npmjs.com/package/mysql2</a>
+          <br>
+          <pre class="my-code">
+            <code class="cmake">
+$ npm install mysql2
+            </code>
+          </pre>
+          Kemudian untuk panggil modul dengan.
+          <pre class="my-code">
+            <code class="javascript">
+const Mysql = require('mysql2');
+            </code>
+          </pre>
+          Lalu untuk kode program hapi menghubungkan ke database mysql.
+          <pre class="my-code">
+            <code class="javascript">
+const Hapi = require("@hapi/hapi");
+const Mysql = require("myql2");
+
+const database = Mysql.createConnection({
+  host: 'localhost',
+  user: 'root',
+  password: 'pass123',
+  database: 'exam_db'
+});
+
+database.connect((err) => {
+  if(err) {
+    console.log('Connect to database failed');
+    return;
+  }
+  console.log('Connect to database success');
+})
+
+const init = async() => {
+  const server = Hapi.server({
+    host: 'localhost',
+    port: 3000
+  });
+
+  await server.start();
+  console.log('Server running on %s', server.info.uri);
+};
+
+process.on('unhandledRejection', (err) => {
+  console.log(err);
+  process.exit(1);
+});
+
+init();              
+            </code>
+          </pre>
+        </p>
+      </div>
+      <div class="footer">
+        <p>By Maulana Ifandika</p>
+      </div>
+    </div>
+
+    <!-- Js -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  </body>
+</html>

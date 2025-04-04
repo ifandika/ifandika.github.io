@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Framework Hapi | Query MySQL</title>
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <!-- HiglightJs -->
+  <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css"> -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/atom-one-dark.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+  <script>hljs.highlightAll();</script>
+  <style>
+    body {
+      width: auto;
+      margin: 0;
+      padding: 0;
+    }
+    .base {
+      width: auto;
+      height: auto;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      padding: 70px 10px 10px 10px;
+    }
+    .base-main {
+      width: 100%;
+      height: auto;
+      max-width: 1200px;
+    }
+    img {
+      display: flex;
+      width: 80%;
+      height: auto;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    pre {
+      margin: 0;
+      padding: 0;
+      height: auto;
+      width: auto;
+    }
+    pre code.hljs {
+      font-size: 14px;
+      padding: 0 10px 0 10px !important;
+      border-left: solid salmon 4px;
+    }
+    .my-navmenu:hover {
+      background-color: salmon;
+    }
+    th, td {
+      border: 2px solid rgb(36, 36, 36);
+      padding: 5px;
+    }
+  </style>
+</head>
+<body>
+  <div id="navbarContent" class="w-100 h-auto position-fixed" style="background-color: #0d1829; display: flex; align-items: center; justify-content: center;">
+    <div class="navbar-base w-100 h-auto" style="max-width: 1200px;">
+      <nav class="navbar navbar-expand-lg navbar-light text-white">
+        <a class="navbar-brand text-white" href="https://ifandika.github.io/index.html">Ifandika.github.io</a>
+        <button style="background-color: #0d2850;" class="navbar-toggler text-white" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link text-white my-navmenu" href="https://ifandika.github.io/index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white my-navmenu" href="#">Contact</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white my-navmenu" href="https://ifandika.github.io/pustaka/index.html">Pustaka</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white my-navmenu" href="https://ifandika.github.io/projects/index.html">Projects</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+  </div>
+
+  <div class="base">
+    <div class="base-main">
+      <h2>Framework Hapi | Query MySQL</h2>
+      <h2>Langkah</h2>
+      <p>
+        Query dilakukan untuk mengambil data ke database, untuk melakukan query ada 2 fungsi, #query() dan #execute(). Ketika melakukan query maka
+        perlu secara asynchronous, jika synchronous maka akan gagal.
+        <br>
+        Perbedaan #query() dengan #execute()
+        <br>
+        <table>
+          <tr>
+            <th>Method</th>
+            <th>Penggunaan</th>
+            <th>SQL Injection</th>
+          </tr>
+          <tr>
+            <td>query(sql, params)</td>
+            <td>Simple queries (not always prepared statements)</td>
+            <td>No automatic protection</td>
+          </tr>
+          <tr>
+            <td>execute(sql, params)</td>
+            <td>Prepared statements (recommended for inserts, updates)</td>
+            <td>Yes, protects automatically</td>
+          </tr>
+        </table>
+        Contoh sederhana query dengan fungsi #query()
+        <br>
+        <pre class="my-code">
+          <code class="javascript">
+server.route({
+  method: 'GET',
+  path: '/readings',
+  handler: async function(request, h) {
+    try {
+      const query_all = 'SELECT * FROM examples.readings LIMIT 2';
+      const [results] = await database.promise().query(query_all);
+      console.log(results);
+      return JSON.stringify(results);
+    }
+    catch(err) {
+      console.log(err);
+    }
+  }
+});
+          </code>
+        </pre>
+        Kemudian bilaman ingin memasukan nilai ke pernyataan dengan #execute()
+        <pre class="my-code">
+          <code class="javascript">
+server.route({
+  method: 'GET',
+  path: '/readings',
+  handler: async(request, h) => {
+    const get_query = `SELECT * FROM examples.readings LIMIT ?`;
+    const limit = '2';
+    try {
+      const [results] = await database.promise().execute(get_query, [limit]);
+      const JSON_results = JSON.stringify(results);
+      console.log(JSON_results);
+      return h.response(JSON_results).code(201);
+    }
+    catch(err) {
+      console.error(err);
+      return h.response({ error: 'Failed get all readings' }).code(500);
+    }
+  }
+});
+          </code>
+        </pre>
+        Jika sudah dapat diakses lewat browser atau curl dengan method GET dan alamat http://localhost:3000/readings, maka akan terdapat
+        tulisan "Hello from server".
+        <h4>| Query placeholder</h4>
+        Menggunakan query placehoder dengan tanda tanya (?), namun ketika memasukan harus konversi ke teks/string jika nilai maka tidak bisa.
+        <br>
+        <pre>
+          <code class="cmake">
+
+          </code>
+        </pre>
+      </p>
+    </div>
+    <div class="footer">
+      <p>By Maulana Ifandika</p>
+    </div>
+  </div>
+
+  <!-- Js -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

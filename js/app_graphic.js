@@ -36,18 +36,6 @@ const data_graphic = [
     ]
   },
   {
-    "name": "Poster Infografis Bencana",
-    "jenis": "Poster",
-    "src": "https://ifandika.github.io/resources/graphic/Banjir Merugikan Cegah Mulai Sekarang_Maulana Ifandika_Universitas Muhammadiyah Purworejo.png",
-    "rating": 5,
-    "comments": [
-      {
-        "username": "ifandika",
-        "comment": "Desainya bagus sekali !"
-      }
-    ]
-  },
-  {
     "name": "Poster Ilmiah Bencana",
     "jenis": "Poster",
     "src": "https://ifandika.github.io/resources/graphic/Karakteristik Bencana Banjir Bandang Di Indonesia_Maulana Ifandika_Universitas Muhammadiyah Purworejo.png",
@@ -116,7 +104,6 @@ function get_data() {
     }
     else {
       const page_poster_row = document.querySelector(`.row-${row}`);
-      console.log(page_poster_row);
       const new_item = document.createElement('div');
       new_item.classList = 'col-sm';
       new_item.innerHTML = `

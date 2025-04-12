@@ -1,5 +1,5 @@
-.c-oranged {
-    color: orangered;
+.c-red-soft-1 {
+    color: #F7374F;
 }
 .c-gray {
     color: gray;
@@ -15,6 +15,9 @@
 }
 .c-slateblue {
     color: slateblue;
+}
+.c-green-soft-1 {
+    color: #1DCD9F;
 }
 .bg-salmon {
     background-color: salmon;

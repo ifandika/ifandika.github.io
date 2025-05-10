@@ -24,21 +24,9 @@ const data_graphic = [
     ]
   },
   {
-    "name": "Poster Infografis Bencana",
+    "name": "Asymmetrical Graphic Design",
     "jenis": "Poster",
-    "src": "https://ifandika.github.io/resources/graphic/Banjir Merugikan Cegah Mulai Sekarang_Maulana Ifandika_Universitas Muhammadiyah Purworejo.png",
-    "rating": 5,
-    "comments": [
-      {
-        "username": "ifandika",
-        "comment": "Desainya bagus sekali !"
-      }
-    ]
-  },
-  {
-    "name": "Poster Ilmiah Bencana",
-    "jenis": "Poster",
-    "src": "https://ifandika.github.io/resources/graphic/Karakteristik Bencana Banjir Bandang Di Indonesia_Maulana Ifandika_Universitas Muhammadiyah Purworejo.png",
+    "src": "https://ifandika.github.io/resources/graphic/graphic_3.png",
     "rating": 5,
     "comments": [
       {

@@ -1,39 +1,34 @@
+// "../resources/graphic/" base url
 const data_graphic = [
   {
     "name": "Poster Ilmiah Bencana",
     "jenis": "Poster",
-    "src": "https://ifandika.github.io/resources/graphic/Karakteristik Bencana Banjir Bandang Di Indonesia_Maulana Ifandika_Universitas Muhammadiyah Purworejo.png",
-    "rating": 5,
-    "comments": [
-      {
-        "username": "ifandika",
-        "comment": "Desainya bagus sekali !"
-      }
-    ]
+    "src": "../resources/graphic/img1/img1.png",
+    "cdr": "../resources/graphic/img1/img1.cdr"
   },
   {
     "name": "Poster Infografis Bencana",
     "jenis": "Poster",
-    "src": "https://ifandika.github.io/resources/graphic/Banjir Merugikan Cegah Mulai Sekarang_Maulana Ifandika_Universitas Muhammadiyah Purworejo.png",
-    "rating": 5,
-    "comments": [
-      {
-        "username": "ifandika",
-        "comment": "Desainya bagus sekali !"
-      }
-    ]
+    "src": "../resources/graphic/img2/img2.png",
+    "cdr": "../resources/graphic/img2/img2.cdr"
   },
   {
     "name": "Asymmetrical Graphic Design",
     "jenis": "Poster",
-    "src": "https://ifandika.github.io/resources/graphic/graphic_3.png",
-    "rating": 5,
-    "comments": [
-      {
-        "username": "ifandika",
-        "comment": "Desainya bagus sekali !"
-      }
-    ]
+    "src": "../resources/graphic/img3/img3.png",
+    "cdr": "../resources/graphic/img3/img3.cdr"
+  },
+  {
+    "name": "Poster Infografis IPTEK",
+    "jenis": "Poster",
+    "src": "../resources/graphic/img4/img4.png",
+    "cdr": "../resources/graphic/img4/img4.cdr"
+  },
+  {
+    "name": "Design Landing Page Web",
+    "jenis": "Landing Page Web",
+    "src": "../resources/graphic/img5/img5.png",
+    "cdr": "../resources/graphic/img5/img5.cdr"
   }
 ];
 
@@ -70,8 +65,13 @@ function get_data() {
         <div class="col-sm">
           <img src="${e.src}" class="img-fluid rounded" alt="Responsive image">
           <p>${e.name}</p>
-          <p>${e.jenis}</p>
-          <p>Rating: ${e.rating}</p>
+          <div class="graphic-download">
+            <div>
+              <a href="${e.cdr}">
+                <i class="bi bi-download "></i> Unduh CDR
+              </a>
+            </div>
+          </div>
         </div>
       `;
       page_poster.appendChild(new_row);
@@ -84,8 +84,13 @@ function get_data() {
         <div class="col-sm">
           <img src="${e.src}" class="img-fluid rounded" alt="Responsive image">
           <p>${e.name}</p>
-          <p>${e.jenis}</p>
-          <p>Rating: ${e.rating}</p>
+          <div class="graphic-download">
+            <div>
+              <a href="${e.cdr}">
+                <i class="bi bi-download "></i> Unduh CDR
+              </a>
+            </div>
+          </div>
         </div>
       `;
       page_poster.appendChild(new_row);
@@ -97,8 +102,13 @@ function get_data() {
       new_item.innerHTML = `
         <img src="${e.src}" class="img-fluid rounded" alt="Responsive image">
         <p>${e.name}</p>
-        <p>${e.jenis}</p>
-        <p>Rating: ${e.rating}</p>
+        <div class="graphic-download">
+          <div>
+            <a href="${e.cdr}">
+              <i class="bi bi-download "></i> Unduh CDR
+            </a>
+          </div>
+        </div>
       `;
       page_poster_row.appendChild(new_item);
     }
@@ -106,5 +116,3 @@ function get_data() {
 }
 
 get_data();
-
-

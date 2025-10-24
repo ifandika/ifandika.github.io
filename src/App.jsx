@@ -12,15 +12,13 @@ import Blog from "./pages/Blog";
 
 export default function App() {
   return (
-    <HashRouter>
-      <Routes>
-        <Route index path="/" element={<Home />} />
-        <Route path="/blog" element={<Blog />} />
-        <Route path="/graphic" element={<Graphic />} />
-        <Route path="/contact" element={<Contact />} />
-        <Route path="/library" element={<Library />} />
-        <Route path="/project" element={<Project />} />
-      </Routes>
-    </HashRouter>
+    <Routes>
+      <Route index path="/" element={<Home />} />
+      <Route path="/blog" element={<Blog />} />
+      <Route path="/graphic" element={<Graphic />} />
+      <Route path="/contact" element={<Contact />} />
+      <Route path="/library" element={<Library />} />
+      <Route path="/project" element={<Project />} />
+    </Routes>
   );
 }

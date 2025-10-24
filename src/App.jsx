@@ -7,12 +7,12 @@ import Graphic from "./pages/Graphic";
 import Contact from "./pages/Contact";
 import Project from "./pages/Project";
 import Library from "./pages/Library";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, HashRouter } from "react-router-dom";
 import Blog from "./pages/Blog";
 
 export default function App() {
   return (
-    <BrowserRouter>
+    <HashRouter>
       <Routes>
         <Route index path="/" element={<Home />} />
         <Route path="/blog" element={<Blog />} />
@@ -21,6 +21,6 @@ export default function App() {
         <Route path="/library" element={<Library />} />
         <Route path="/project" element={<Project />} />
       </Routes>
-    </BrowserRouter>
+    </HashRouter>
   );
 }

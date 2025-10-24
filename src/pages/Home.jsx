@@ -1,6 +1,6 @@
 import React from "react";
-import Header from "../../component/header/Header";
-import Footer from "../../component/footer/Footer";
+import Header from "../component/Header";
+import Footer from "../component/Footer";
 import {
   Grid,
   Container,
@@ -11,7 +11,7 @@ import {
   CardContent,
   Typography,
 } from "@mui/material";
-import ifandikaImg from "../../assets/ifandika.jpg";
+import ifandikaImg from "../assets/ifandika.jpg";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import { useTheme } from "@mui/material/styles";
 
@@ -22,7 +22,7 @@ import TimelineConnector from "@mui/lab/TimelineConnector";
 import TimelineContent from "@mui/lab/TimelineContent";
 import TimelineDot from "@mui/lab/TimelineDot";
 
-import certificateData from "../../assets/certificate.json";
+import certificateData from "../assets/certificate.json";
 
 export default function Home() {
   const isMobileLayout = useMediaQuery(useTheme().breakpoints.down("sm"));

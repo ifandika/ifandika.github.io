@@ -22,7 +22,7 @@ const NavList = ({ ...props }) => {
     >
       {pages.map((page) => (
         <Link
-          href={`https://ifandika.github.io/${page.id}`}
+          href={`/${page.id}`}
           key={page.id}
           sx={{
             color: { xs: "primary", sm: "white", cursor: "pointer" },

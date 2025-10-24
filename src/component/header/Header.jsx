@@ -2,8 +2,8 @@ import React, { useState } from "react";
 import { Stack, Link, Toolbar, Typography, Container, AppBar, Button, Drawer, } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
 const pages = [
-  { name: "Home", id: "Home" },
-  { name: "Blog", id: "Blog" },
+  { name: "Home", id: "home" },
+  { name: "Blog", id: "blog" },
   { name: "Graphic", id: "graphic" },
   { name: "Contact", id: "contact" },
   { name: "Project", id: "project" },

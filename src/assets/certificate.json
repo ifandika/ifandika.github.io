@@ -1,0 +1,74 @@
+[
+  {
+    "id": 1,
+    "result": "BRONZE (3rd)",
+    "name": "LKS SMK: IT Software Solution for Business (Lomba Kompetensi Siswa)",
+    "link": "#"
+  },
+  {
+    "id": 2,
+    "result": "",
+    "name": "IDCamp: Belajar Dasar AWS Cloud (Indosat Ooredoo DigitalCamp)",
+    "link": "#"
+  },
+  {
+    "id": 3,
+    "result": "",
+    "name": "IDCamp: Belajar Dasar Pemrograman JavaScript (Indosat Ooredoo DigitalCamp)",
+    "link": "#"
+  },
+  {
+    "id": 4,
+    "result": "",
+    "name": "IDCamp: Belajar Back-End Pemula dengan JavaScript (Indosat Ooredoo DigitalCamp)",
+    "link": "#"
+  },
+  {
+    "id": 5,
+    "result": "",
+    "name": "IDCamp: Belajar Dasar AI (Indosat Ooredoo DigitalCamp)",
+    "link": "#"
+  },
+  {
+    "id": 6,
+    "result": "APPRECIATE",
+    "name": "NYSO: Matematika (National Youth Science Olympiade)",
+    "link": "#"
+  },
+  {
+    "id": 7,
+    "result": "APPRECIATE",
+    "name": "POLTEK-SCI: Lomba Cipta Puisi (Politeknik Siber Cerdika Internasional)",
+    "link": "#"
+  },
+  {
+    "id": 8,
+    "result": "",
+    "name": "Dicoding: Memulai Pemrograman Dengan Python",
+    "link": "#"
+  },
+  {
+    "id": 9,
+    "result": "",
+    "name": "Dicoding: Belajar Dasar Visualisasi Data",
+    "link": "#"
+  },
+  {
+    "id": 10,
+    "result": "",
+    "name": "Digital Talent: Dasar-dasar Keamanan AI (Kementerian Komunikasi dan Digital Republik Indonesia)",
+    "link": "#"
+  },
+  {
+    "id": 11,
+    "result": "APPRECIATE",
+    "name": "Aryakreatif: Lomba Poster Nasional",
+    "link": "#"
+  },
+  {
+    "id": 12,
+    "result": "APPRECIATE",
+    "name": "MAGIC SV UNS: NATIONAL INFOGRAPHIC DESIGN COMPETITION",
+    "link": "#"
+  }
+]

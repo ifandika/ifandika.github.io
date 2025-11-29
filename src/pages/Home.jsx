@@ -1,5 +1,4 @@
 import React from "react";
-import Header from "../component/Header";
 import Footer from "../component/Footer";
 import {
   Grid,
@@ -23,6 +22,7 @@ import TimelineContent from "@mui/lab/TimelineContent";
 import TimelineDot from "@mui/lab/TimelineDot";
 
 import certificateData from "../assets/certificate.json";
+import Header from "../component/Header";
 
 export default function Home() {
   const isMobileLayout = useMediaQuery(useTheme().breakpoints.down("sm"));
@@ -50,10 +50,6 @@ export default function Home() {
 
   return (
     <>
-      <header>
-        <Header />
-      </header>
-
       <main>
         <Container sx={{ marginTop: "60px" }}>
           <Box sx={{ flexGrow: 2 }}>

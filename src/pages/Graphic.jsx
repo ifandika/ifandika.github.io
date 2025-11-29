@@ -6,7 +6,6 @@ export default function Graphic() {
   
   return (
     <>
-      <Header/>
       <Footer/>
     </>
   );

@@ -7,18 +7,17 @@ import Graphic from "./pages/Graphic";
 import Contact from "./pages/Contact";
 import Project from "./pages/Project";
 import Library from "./pages/Library";
-import { BrowserRouter, Routes, Route, HashRouter } from "react-router-dom";
 import Blog from "./pages/Blog";
+import Header from "./component/Header";
+import { Link, Outlet } from "react-router-dom";
 
 export default function App() {
   return (
-    <Routes>
-      <Route index path="/" element={<Home />} />
-      <Route path="/blog" element={<Blog />} />
-      <Route path="/graphic" element={<Graphic />} />
-      <Route path="/contact" element={<Contact />} />
-      <Route path="/library" element={<Library />} />
-      <Route path="/project" element={<Project />} />
-    </Routes>
+    <>
+      <Header/>
+      <main>
+        <Outlet />
+      </main>
+    </>
   );
 }

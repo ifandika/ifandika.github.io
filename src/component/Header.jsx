@@ -1,6 +1,22 @@
 import React, { useState } from "react";
-import { Stack, Link, Toolbar, Typography, Container, AppBar, Button, Drawer, } from "@mui/material";
+import {
+  Stack,
+  Toolbar,
+  Typography,
+  Container,
+  AppBar,
+  Button,
+  Drawer,
+} from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
+import { Link, Outlet } from "react-router-dom";
+import Home from "../pages/Home";
+import Blog from "../pages/Blog";
+import Graphic from "../pages/Graphic";
+import Contact from "../pages/Contact";
+import Project from "../pages/Project";
+import Library from "../pages/Library";
+
 const pages = [
   { name: "Home", id: "home" },
   { name: "Blog", id: "blog" },
@@ -22,7 +38,7 @@ const NavList = ({ ...props }) => {
     >
       {pages.map((page) => (
         <Link
-          href={`/${page.id}`}
+          to={ page.id != "home" ? `/${page.id}` : 'https://ifandika.github.io' }
           key={page.id}
           sx={{
             color: { xs: "primary", sm: "white", cursor: "pointer" },
@@ -66,11 +82,13 @@ const Nav = () => {
     </>
   );
 };
-const Header = () => {  
+const Header = () => {
   return (
-    <AppBar sx={{
-      height: '65px',
-    }}>
+    <AppBar
+      sx={{
+        height: "65px",
+      }}
+    >
       <Container>
         <Toolbar disableGutters>
           <Stack

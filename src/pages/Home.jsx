@@ -22,7 +22,6 @@ import TimelineContent from "@mui/lab/TimelineContent";
 import TimelineDot from "@mui/lab/TimelineDot";
 
 import certificateData from "../assets/certificate.json";
-import Header from "../component/Header";
 
 export default function Home() {
   const isMobileLayout = useMediaQuery(useTheme().breakpoints.down("sm"));

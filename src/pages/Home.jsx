@@ -46,6 +46,10 @@ export default function Home() {
     color: "#595eeeff",
     fontWeight: "bold",
   };
+  const imgDailyStyle = {
+    width: "100%",
+    height: "auto",
+  };
 
   return (
     <>
@@ -56,16 +60,14 @@ export default function Home() {
               <Grid
                 item
                 size={7}
-                sx={{ padding: isMobileLayout ? "0 0 20px 0" : "40px 0 0 0" }}
-              >
+                sx={{ padding: isMobileLayout ? "0 0 20px 0" : "40px 0 0 0" }}>
                 <p>Hey, i'am</p>
                 <h1>Maulana Ifandika</h1>
                 <h4>Student | Developer | IT Enthusiast</h4>
                 <p
                   style={{
                     textAlign: "justify",
-                  }}
-                >
+                  }}>
                   Welcome to my personal website. I love science, technology,
                   and mathematics, especially in the field of software
                   development. I prefer systems or back-end work, especially
@@ -82,8 +84,7 @@ export default function Home() {
                     flexWrap: "wrap",
                     justifyContent: { xs: "center", sm: "flex-start" },
                     alignItems: { xs: "center", sm: "flex-start" },
-                  }}
-                >
+                  }}>
                   {chipValue.map((value, key) => (
                     <Chip
                       key={key}
@@ -97,10 +98,34 @@ export default function Home() {
               <Grid
                 item
                 size={5}
-                sx={{ padding: isMobileLayout ? "0" : "40px" }}
-              >
+                sx={{ padding: isMobileLayout ? "0" : "40px" }}>
                 <img src={ifandikaImg} style={ifandikaImgStyle} />
                 <p>This is me, I'm coding HTML bro...</p>
+              </Grid>
+            </Grid>
+          </Box>
+
+          <Box sx={{ flexGrow: 2 }}>
+            <h1>My daily activities</h1>
+
+            <Grid container {...(isMobileLayout ? { columns: true } : {})}>
+              <Grid
+                item
+                size={6}
+                sx={{
+                  padding: isMobileLayout ? "0 0 20px 0" : "40px 15px 15px 15px",
+                }}>
+                <img style={imgDailyStyle} src="https://ifandika.github.io/images/img1-lks-smk-2024.jpg"/>
+                <h4>Won 3rd place in the LKS (Student Competency Competition) competition at SMK Batik Perbaik Purworejo in 2024</h4>
+              </Grid>
+              <Grid
+                item
+                size={6}
+                sx={{
+                  padding: isMobileLayout ? "0 0 20px 0" : "40px 15px 15px 15px",
+                }}>
+                <img style={imgDailyStyle} src="https://ifandika.github.io/images/img2-present-college-2025.jpg"/>
+                <h4>Group presentation for a course on operating systems</h4>
               </Grid>
             </Grid>
           </Box>
@@ -114,22 +139,26 @@ export default function Home() {
                     flex: 0,
                     padding: 0,
                   },
-                }}
-              >
-                {certificateData.slice().reverse().map((item) => (
-                  <TimelineItem key={item.id}>
-                    <TimelineSeparator>
-                      <TimelineDot />
-                      <TimelineConnector />
-                    </TimelineSeparator>
-                    <TimelineContent>
-                      <span style={{ fontSize: "14px" }}>
-                        <span style={labelCertificateStyle}>{item.result}</span>{" "}
-                        <b>{item.name}</b> -<a href={item.link}> View</a>
-                      </span>
-                    </TimelineContent>
-                  </TimelineItem>
-                ))}
+                }}>
+                {certificateData
+                  .slice()
+                  .reverse()
+                  .map((item) => (
+                    <TimelineItem key={item.id}>
+                      <TimelineSeparator>
+                        <TimelineDot />
+                        <TimelineConnector />
+                      </TimelineSeparator>
+                      <TimelineContent>
+                        <span style={{ fontSize: "14px" }}>
+                          <span style={labelCertificateStyle}>
+                            {item.result}
+                          </span>{" "}
+                          <b>{item.name}</b> -<a href={item.link}> View</a>
+                        </span>
+                      </TimelineContent>
+                    </TimelineItem>
+                  ))}
               </Timeline>
             </div>
           </div>

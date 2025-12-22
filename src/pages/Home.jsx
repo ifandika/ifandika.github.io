@@ -51,6 +51,7 @@ export default function Home() {
   const imgDailyStyle = {
     width: "100%",
     height: "auto",
+    borderRadius: "8px",
   };
 
   return (
@@ -147,7 +148,7 @@ export default function Home() {
                   },
                 }}>
                 {certificateData
-                  .slice()
+                  .slice(0, 4)
                   .reverse()
                   .map((item) => (
                     <TimelineItem key={item.id}>

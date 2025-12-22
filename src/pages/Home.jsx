@@ -22,12 +22,14 @@ import TimelineContent from "@mui/lab/TimelineContent";
 import TimelineDot from "@mui/lab/TimelineDot";
 
 import certificateData from "../assets/certificate.json";
+import galleriesData from "../assets/galleries.json";
 
 export default function Home() {
   const isMobileLayout = useMediaQuery(useTheme().breakpoints.down("sm"));
   const ifandikaImgStyle = {
     width: "100%",
     height: "auto",
+    borderRadius: "8px",
   };
   const chipValue = [
     "Front-End",
@@ -106,27 +108,31 @@ export default function Home() {
           </Box>
 
           <Box sx={{ flexGrow: 2 }}>
-            <h1>My daily activities</h1>
+            <h1>Galleries</h1>
 
             <Grid container {...(isMobileLayout ? { columns: true } : {})}>
-              <Grid
-                item
-                size={6}
-                sx={{
-                  padding: isMobileLayout ? "0 0 20px 0" : "40px 15px 15px 15px",
-                }}>
-                <img style={imgDailyStyle} src="https://ifandika.github.io/images/img1-lks-smk-2024.jpg"/>
-                <h4>Won 3rd place in the LKS (Student Competency Competition) competition at SMK Batik Perbaik Purworejo in 2024</h4>
-              </Grid>
-              <Grid
-                item
-                size={6}
-                sx={{
-                  padding: isMobileLayout ? "0 0 20px 0" : "40px 15px 15px 15px",
-                }}>
-                <img style={imgDailyStyle} src="https://ifandika.github.io/images/img2-present-college-2025.jpg"/>
-                <h4>Group presentation for a course on operating systems</h4>
-              </Grid>
+              {galleriesData
+                .slice()
+                .reverse()
+                .map((item) => (
+                  <Grid
+                    key={item.id}
+                    item
+                    size={6}
+                    sx={{
+                      padding: isMobileLayout
+                        ? "0 0 20px 0"
+                        : "40px 15px 15px 15px",
+                    }}>
+                    <img
+                      style={imgDailyStyle}
+                      src={item.link}
+                    />
+                    <h4>
+                      {item.desc}
+                    </h4>
+                  </Grid>
+                ))}
             </Grid>
           </Box>
 

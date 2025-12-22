@@ -13,7 +13,7 @@ import { Link, Outlet } from "react-router-dom";
 import Home from "../pages/Home";
 import Blog from "../pages/Blog";
 import Graphic from "../pages/Graphic";
-import Contact from "../pages/Contact";
+import Gallery from "../pages/Gallery";
 import Project from "../pages/Project";
 import Library from "../pages/Library";
 
@@ -21,7 +21,7 @@ const pages = [
   { name: "Home", id: "home" },
   { name: "Blog", id: "blog" },
   { name: "Graphic", id: "graphic" },
-  { name: "Contact", id: "contact" },
+  { name: "Gallery", id: "Gallery" },
   { name: "Project", id: "project" },
   { name: "Library", id: "library" },
 ];

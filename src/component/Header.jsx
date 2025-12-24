@@ -7,6 +7,7 @@ import {
   AppBar,
   Button,
   Drawer,
+  colors,
 } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
 import { Link, Outlet } from "react-router-dom";
@@ -41,7 +42,10 @@ const NavList = ({ ...props }) => {
           to={ page.id != "home" ? `/${page.id}` : 'https://ifandika.github.io' }
           key={page.id}
           sx={{
-            color: { xs: "primary", sm: "white", cursor: "pointer" },
+            color: { xs: "black", sm: "white", sx: "black", cursor: "pointer" },
+          }}
+          style={{
+            textDecoration: "none",
           }}
         >
           {page.name}
@@ -62,7 +66,7 @@ const Nav = () => {
         onClick={toggleDrawer(true)}
         sx={{ color: "white", display: { xs: "flex", sm: "none" } }}
       >
-        <MenuIcon />
+        <MenuIcon/>
       </Button>
       <Drawer
         open={open}
@@ -98,7 +102,7 @@ const Header = () => {
             width="100%"
           >
             <Typography variant="h6">Ifandika.github.io</Typography>
-            <Nav />
+            <Nav/>
           </Stack>
         </Toolbar>
       </Container>

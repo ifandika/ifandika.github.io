@@ -28,15 +28,15 @@ export default function Library() {
           <ul>
             {/* DSA (Data Structure and Algorithms) */}
             <li><a
-              href="https://docs.google.com/document/d/1Dg_UEbevQCmsXydzccVvlxpZXkkmLjD2BXxncpj5hHs/edit?usp=sharing">
+              href="https://docs.google.com/document/d/1B7r7zWnOOVcXbgN2VHab7mS4q9sQbCM7ZqwbA-10FTM/edit?usp=sharing">
               <i>DSA (Data Structure and Algorithms) - Basics</i></a>
             </li>
             <li><a
-              href="https://docs.google.com/document/d/1Dg_UEbevQCmsXydzccVvlxpZXkkmLjD2BXxncpj5hHs/edit?usp=sharing">
+              href="">
               <i>DSA (Data Structure and Algorithms) - Asymptotic Notation</i></a>
             </li>
             <li><a
-              href="https://docs.google.com/document/d/1Dg_UEbevQCmsXydzccVvlxpZXkkmLjD2BXxncpj5hHs/edit?usp=sharing">
+              href="">
               <i>DSA (Data Structure and Algorithms) - Books, Magazine, Video, etc.</i></a>
             </li>
             

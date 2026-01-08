@@ -123,6 +123,15 @@ export default function Library() {
             <li><a
               href="https://docs.google.com/document/d/1rmpfANIikvl8pVXDhdMXRBkfIZtFads-t3GeTjQo35Y/edit?usp=sharing">
               Tutorial Git Bash</a></li>
+            <li><a
+              href="https://docs.google.com/document/d/1Oi_iERjcTKN84fV3uckiIIuJscq9o5TTny2DI6JfYBg/edit?usp=sharing">
+              Tutorial Git VCS (Version Control System)</a></li>
+            <li><a
+              href="https://docs.google.com/document/d/1k3VS_3nrx1orMkp2EjTieEeA-tEtl11_xYVuvoi7FHE/edit?usp=sharing">
+              Tutorial Apache Maven</a></li>
+            <li><a
+              href="https://docs.google.com/document/d/1EEQwC5ireIM-dCiddRWTY9jiPT0vc1ykMLzxk9iUocg/edit?usp=sharing">
+              Tutorial Tools Vite</a></li>
           </ul>
 
           {/* Graphic Design */}

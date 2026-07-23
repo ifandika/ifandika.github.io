@@ -6,12 +6,16 @@ import Grid from "@mui/material/Grid";
 import { Facebook, Instagram, Twitter } from "@mui/icons-material";
 import { Box } from "@mui/material";
 
+/**
+ * Fungsi ini untuk mengembalikan html elemen Footer
+ * @returns 
+ */
 export default function Footer() {
   return (
     <Box component="footer"
       sx={{
         backgroundColor: (theme) =>
-          theme.palette.mode === "light"
+          theme.palette.mode === "dark"
             ? theme.palette.grey[200]
             : theme.palette.grey[800],
         p: 6,

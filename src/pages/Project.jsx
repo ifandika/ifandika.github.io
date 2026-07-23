@@ -6,8 +6,7 @@ export default function Project() {
   
   return (
     <>
-      <Header/>
-      <Footer/>
+      
     </>
   );
 }

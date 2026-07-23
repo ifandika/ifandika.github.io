@@ -13,10 +13,13 @@ import {
   Link,
 } from "@mui/material";
 
+/**
+ * Funsgi ini mengembalikan elemen html untuk halaman library
+ * @returns 
+ */
 export default function Library() {
   return (
     <>
-      <Header />
       <main>
         <Container sx={{ marginTop: "100px" }}>
           <Typography variant="h4">Library</Typography>
@@ -168,7 +171,6 @@ export default function Library() {
 
         </Container>
       </main>
-      <Footer />
     </>
   );
 }

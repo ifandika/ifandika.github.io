@@ -3,6 +3,7 @@ import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import "./index.css";
 import Header from "./component/Header";
+import Footer from "./component/Footer";
 import { Link, Outlet } from "react-router-dom";
 
 export default function App() {
@@ -12,6 +13,7 @@ export default function App() {
       <main>
         <Outlet />
       </main>
+      <Footer/>
     </>
   );
 }

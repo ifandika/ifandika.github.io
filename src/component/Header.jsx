@@ -18,6 +18,10 @@ import Gallery from "../pages/Gallery";
 import Project from "../pages/Project";
 import Library from "../pages/Library";
 
+/**
+ * Variabel pages digunakan untuk menyimpan alamat halaman berupa key-value, dengan name untuk nama
+ * halaman dan id untuk id ke tujuan halaman /{id}
+ */
 const pages = [
   { name: "Home", id: "home" },
   { name: "Blog", id: "blog" },
@@ -26,12 +30,18 @@ const pages = [
   { name: "Project", id: "project" },
   { name: "Library", id: "library" },
 ];
+
+/**
+ * Variabel fungsi NavList berisi
+ * @param {*} param0 
+ * @returns 
+ */
 const NavList = ({ ...props }) => {
   return (
     <Stack
       overflow="auto"
       direction={{ xs: "column", sm: "row" }}
-      gap={3}
+      spacing={3}
       ml={{ xs: 3, sm: 0 }}
       mt={{ xs: 3, sm: 0 }}
       width={{ xs: "200px", sm: "initial" }}
@@ -39,13 +49,15 @@ const NavList = ({ ...props }) => {
     >
       {pages.map((page) => (
         <Link
-          to={ page.id != "home" ? `/${page.id}` : 'https://ifandika.github.io' }
+          to={ page.id != "home" ? `/${page.id}` : '/' }
           key={page.id}
           sx={{
-            color: { xs: "black", sm: "white", sx: "black", cursor: "pointer" },
+            color: { xs: "black", sm: "black", sx: "black", cursor: "pointer" },
           }}
           style={{
             textDecoration: "none",
+            color: "white",
+            fontWeight: "bold"
           }}
         >
           {page.name}
@@ -74,6 +86,12 @@ const Nav = () => {
         anchor="right"
         sx={{
           display: { xs: "inherit", sm: "none" },
+          '& .MuiDrawer-paper': {
+            width: '200px',
+            backgroundColor: '#2c3e50',
+            color: 'white',
+            padding: '20px',
+          },
         }}
       >
         <NavList />
@@ -86,6 +104,40 @@ const Nav = () => {
     </>
   );
 };
+// const Nav = () => {
+//   const [open, setOpen] = useState(false);
+//   const toggleDrawer = (newOpen) => () => {
+//     setOpen(newOpen);
+//   };
+  
+//   return (
+//     <>
+//       <Button
+//         variant="text"
+//         onClick={toggleDrawer(true)}
+//         sx={{ color: "white", display: { xs: "flex", sm: "none" } }}
+//       >
+//         <MenuIcon/>
+//       </Button>
+//       <Drawer
+//         open={open}
+//         onClose={toggleDrawer(false)}
+//         anchor="right"
+//         sx={{
+//           display: { xs: "inherit", sm: "none" },
+//         }}
+//       >
+//         <NavList />
+//       </Drawer>
+//       <NavList
+//         sx={{
+//           display: { xs: "none", sm: "inherit" },
+//         }}
+//       />
+//     </>
+//   );
+// };
+
 const Header = () => {
   return (
     <AppBar
@@ -97,16 +149,19 @@ const Header = () => {
         <Toolbar disableGutters>
           <Stack
             direction="row"
-            justifyContent="space-between"
-            alignItems="center"
-            width="100%"
+            sx={{
+              width: "100%",
+              justifyContent: "space-between",
+              alignItems: "center"
+            }}
           >
             <Typography variant="h6">Ifandika.github.io</Typography>
-            <Nav/>
+            <Nav></Nav>
           </Stack>
         </Toolbar>
       </Container>
     </AppBar>
   );
 };
+
 export default Header;
